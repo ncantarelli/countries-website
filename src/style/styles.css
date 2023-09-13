@@ -1,0 +1,23 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: blueviolet;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+nav a:hover {
+    color: rgb(206, 213, 219);
+}
