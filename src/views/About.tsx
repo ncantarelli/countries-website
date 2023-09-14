@@ -4,7 +4,7 @@ function About() {
 
     return (
         <div>
-            <h3>About</h3>
+            <h1>About</h1>
             <AboutCard/>
         </div>
     );

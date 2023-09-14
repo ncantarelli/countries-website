@@ -4,20 +4,59 @@
     margin: 0;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    font-size: 1vw; /* Sets the font size for the whole page to 17px. This will be used as reference for REM and EM units*/
+}
+
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70px;
-    background-color: blueviolet;
-    gap: 20px;
+    text-align: center;
+    height: 8vh; /* Around 70px moved to viewport height*/ 
+    background-color: rgb(202, 202, 205);
+    width: 100vw; /* Will adjust the screen to always fit 100% of the width */
 }
 
 nav a {
     text-decoration: none;
-    color: aliceblue;
+    color: black;
+    font-size: 1rem; /* This is 16px (technically 17.1px but who's checking? */
 }
 
 nav a:hover {
-    color: rgb(206, 213, 219);
+    color: rgb(11, 118, 212);
+}
+
+.NavItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw; /* This is 20px moved to viewport width */
+    margin-left: 0.60vw; /* This is 10px moved to viewport width */
+    margin-right: 0.60vw; /* This is 10px moved to viewport width */
+}
+
+.active {
+    color: rgb(11, 118, 212);
+}
+
+h1 {
+    margin-top: 3.50vh; /* This is 30px moved to viewport height */
+    margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
+    margin-left: 1vw; /* This is 17.1px moved to viewport height */
+    margin-right: 1vw; /* This is 17.1px moved to viewport height */
+    font-size: 2rem; /* This is 32px */
+}
+
+a {
+    font-size: 1rem;
 }
