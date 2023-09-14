@@ -1,4 +1,3 @@
-// import './App.css'
 import { createRoutesFromElements, createBrowserRouter, Route, RouterProvider, Outlet, } from "react-router-dom";
 import Home from "./views/Home";
 import About from "./views/About";
@@ -6,8 +5,10 @@ import MyNavbar from "./components/MyNavbar";
 import ErrorPage from "./views/ErrorPage";
 import Countries from "./views/Countries";
 import Details from "./views/Details";
+import { useEffect } from "react";
 function App() {
   
+
   const router = createBrowserRouter(
 
     createRoutesFromElements(
