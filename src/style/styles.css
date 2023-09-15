@@ -9,11 +9,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
 }
 
 body {
     font-size: 1vw; /* Sets the font size for the whole page to 17px. This will be used as reference for REM and EM units*/
+    background-color: #F6F6F6;
 }
 
 nav {
@@ -22,7 +23,7 @@ nav {
     align-items: center;
     text-align: center;
     height: 8vh; /* Around 70px moved to viewport height*/ 
-    background-color: rgb(202, 202, 205);
+    background-color: #FFFFFF;
     width: 100vw; /* Will adjust the screen to always fit 100% of the width */
 }
 
@@ -42,6 +43,13 @@ h1 {
     margin-left: 1vw; /* This is 17.1px moved to viewport height */
     margin-right: 1vw; /* This is 17.1px moved to viewport height */
     font-size: 2rem; /* This is 32px */
+}
+
+h4 {
+    color: #15141B;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 p {
@@ -65,14 +73,49 @@ a {
     color: rgb(11, 118, 212);
 }
 
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.CardContainer h1 {
+    display: flex;
+    align-items: flex-start;
+    margin: 30px 20px 20px 20px;
+    font-size: 40px;
+}
+
+.CardContainer p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #544EEE;
+    padding: 7px 16px 7px 16px;
+    border-radius: 10px;
+}
+
+.CountryTags p:last-child {
+    color: #646668;
+    background-color: #F6F6F6;
+}
+
 .CountryCard {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    height: 8vh;
+    height: auto; /* Around 70px moved to viewport height*/
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    gap: 8px;
+    padding: 20px;
+    margin: 0 20px 0 20px;
 }
 
-.flag {
-    font-size: 2rem;
+.CountryTags {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8px;
 }

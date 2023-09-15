@@ -34,7 +34,7 @@ function App() {
 const Root = () => {
   return (
     <>
-      <MyNavbar/>
+      <MyNavbar />
       {/* <h2>This will be displayed in every view/page</h2> */}
       <Outlet/>
     </>

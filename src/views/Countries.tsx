@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import MyNavbar from '../components/MyNavbar';
+
 
 interface CountryType {
     name: NameType;
@@ -54,15 +56,17 @@ function Countries() {
     }, []);
 
     return (
-        <div>
+        <div className='CardContainer'>
             <h1>All Countries</h1>
 
             {countries && countries.map((country) => {
                 return <div className="CountryCard" key={country.name?.common}>
-                    <p>{country.name?.common} {country.flag}</p>
-                    <p>{country.region}</p>
-                    {/* <p key={country.name?.common} className='flag'></p> */}
-                       </div>
+                    <h4>{country.name?.common} {country.flag}</h4>
+                    <div className='CountryTags'>
+                        <p>{country.region}</p>
+                        <p>Reviews</p>
+                    </div>
+                </div>
             })}
 
              <Link to="/country/{country.name.common}">Specific country</Link>
