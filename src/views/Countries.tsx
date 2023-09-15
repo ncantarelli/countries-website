@@ -2,12 +2,28 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 interface CountryType {
-    name: object;
+    name: NameType;
+    // capital: [];
     flag: string;
-    languages: object;
-    currencies: object;
-    map: object;
+    region: string;
+    languages: {[key: string]: string};
+    currencies: { [key: string]: string};
+    maps: { googleMaps: string};
 }
+
+interface NameType {
+    common: string;
+    // official: string;
+    // nativeName: NativeNameType;
+}
+
+// interface NativeNameType {
+//     [key: string]: {
+//         common: string,
+//         official: string,
+//     }
+// }
+
 
 function Countries() {
     console.log("Component Rendered");
@@ -15,11 +31,12 @@ function Countries() {
     // const [countries, setCountries] = useState<CountryType | null>(null);
     const [countries, setCountries] = useState<CountryType[]>([
         {
-            name: {},
+            name: {common:""},
             flag: "",
+            region: "",
             languages: {},
             currencies: {},
-            map: {},
+            maps: {googleMaps:""},
         }
     ]);
 
@@ -38,13 +55,17 @@ function Countries() {
 
     return (
         <div>
-            <h1>Countries</h1>
+            <h1>All Countries</h1>
 
             {countries && countries.map((country) => {
-                return <p>{country.name}</p>;
+                return <div className="CountryCard" key={country.name?.common}>
+                    <p>{country.name?.common} {country.flag}</p>
+                    <p>{country.region}</p>
+                    {/* <p key={country.name?.common} className='flag'></p> */}
+                       </div>
             })}
 
-             <Link to="name">Specific country</Link>
+             <Link to="/country/{country.name.common}">Specific country</Link>
         </div>
     );
 }

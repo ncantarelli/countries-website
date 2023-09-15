@@ -36,6 +36,22 @@ nav a:hover {
     color: rgb(11, 118, 212);
 }
 
+h1 {
+    margin-top: 3.50vh; /* This is 30px moved to viewport height */
+    margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
+    margin-left: 1vw; /* This is 17.1px moved to viewport height */
+    margin-right: 1vw; /* This is 17.1px moved to viewport height */
+    font-size: 2rem; /* This is 32px */
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    font-size: 1rem;
+}
+
 .NavItems {
     display: flex;
     justify-content: center;
@@ -49,14 +65,14 @@ nav a:hover {
     color: rgb(11, 118, 212);
 }
 
-h1 {
-    margin-top: 3.50vh; /* This is 30px moved to viewport height */
-    margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
-    margin-left: 1vw; /* This is 17.1px moved to viewport height */
-    margin-right: 1vw; /* This is 17.1px moved to viewport height */
-    font-size: 2rem; /* This is 32px */
+.CountryCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 8vh;
 }
 
-a {
-    font-size: 1rem;
+.flag {
+    font-size: 2rem;
 }
