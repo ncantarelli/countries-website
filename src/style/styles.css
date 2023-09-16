@@ -66,7 +66,8 @@ nav {
     height: 8vh;
     background-color: #FFFFFF;
     width: 100vw;
-    position: relative;
+    position: fixed;
+    top: 0px;
     /* Add relative positioning */
 }
 
@@ -81,11 +82,14 @@ nav {
 nav a {
     text-decoration: none;
     color: #544EEE;
-    font-size: 1rem;
 }
 
 nav a:hover {
-    color: #544EEE;
+    color: #221ead;
+}
+
+.BurgerIcon {
+    cursor: pointer;
 }
 
 .UserAreaLinks {
@@ -101,6 +105,10 @@ nav a:hover {
     padding: 7px 10px 7px 10px;
 }
 
+.UserAreaLinks a:first-child:hover {
+    color: #221ead;
+}
+
 .UserAreaLinks a:last-child {
     text-align: center;
     color: #FFFFFF;
@@ -109,14 +117,16 @@ nav a:hover {
     border-radius: 0.625rem;
 }
 
+.UserAreaLinks a:last-child:hover {
+    background-color: #221ead;
+}
+
 .LogoContainer {
     position: absolute;
-    /* Add absolute positioning */
     left: 50%;
-    /* Center horizontally */
     transform: translateX(-50%);
-    /* Center horizontally */
 }
+
 h1 {
     margin-top: 3.60vh; /* This is 30px moved to viewport height */
     margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
@@ -148,14 +158,14 @@ footer {
     font-size: 2rem;
 }
 
-.NavItems {
+/* .NavItems {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2vw; /* This is 20px moved to viewport width */
-    margin-left: 0.60vw; /* This is 10px moved to viewport width */
-    margin-right: 0.60vw; /* This is 10px moved to viewport width */
-}
+    /* margin-left: 0.60vw; This is 10px moved to viewport width */
+    /* margin-right: 0.60vw; This is 10px moved to viewport width */
+/* } */
 
 .active {
     color: #544EEE;
@@ -168,12 +178,16 @@ footer {
     /* gap: 12px; */
 }
 
+.TopInfoContainer img {
+    cursor: pointer;
+}
+
 .HeaderContainer {
     display: flex;
     justify-content: space-between;
     /* align-items: last baseline; */
     /* gap: 2.34vw; */
-    margin: 0 20px 0 20px;
+    margin: 70px 20px 0 20px;
 }
 
 .HeaderContainer h1 {
@@ -197,6 +211,7 @@ input {
     padding: 7px 16px 7px 16px;
     margin: 10px 20px 10px 20px;
     font-size: 1rem;
+    /* text-align: center; */
     /* width: 300px; */
 }
 
@@ -204,14 +219,9 @@ input::placeholder {
     color: #9895e5;
 }
 
-/* .FilterBox {
-    display: none;
-} */
-
 .FilterBox {
     display: flex;
     border-radius: 30px;
-    /* border: 2px solid ; */
     box-shadow: 0 4px 8px 0 #E5E4FC, 0 6px 20px 0 #E5E4FC;
     background-color: white;
     height: 15vh;
@@ -270,4 +280,68 @@ input::placeholder {
 .CountryTags p:last-child {
     color: #646668;
     background-color: #F6F6F6;
+}
+
+/*! Modal Styles */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; /* Semi-transparent white background */
+    display: flex;
+    flex-direction: column; /* Columns for content */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Space between columns and rows */
+    z-index: 999; /* Ensure modal appears above other content */
+    font-weight: 700;
+}
+
+.modal hr {
+    border: 1px solid #E5E4FC;
+    width: 90vw;
+    margin: 50px 0 20px 0;
+}
+
+.modal-content {
+    /* flex: 1; */
+     /* Take up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 200px; */
+}
+
+.NavItems {
+    display: flex;
+    flex-direction: column; /* Columns for links */
+    align-items: center; /* Center links horizontally */
+    margin: 20px 20px 300px 20px; /* Add spacing around links */
+    gap: 20px;
+}
+
+.UserAreaLinks {
+    display: flex;
+    flex-direction: row; /* Row for UserAreaLinks */
+    align-items: center;
+    margin-top: 10px; /* Add spacing above UserAreaLinks */
+    gap: 20px;
+}
+
+.NavItems a, .UserAreaLinks a {
+    text-decoration: none;
+    color: #544EEE;
+    font-size: 1.3rem;
+    margin: 5px 0; /* Add vertical spacing between links */
+}
+
+.CloseButton {
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
 }

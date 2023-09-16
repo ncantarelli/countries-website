@@ -1,32 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import Modal from './Modal';
 
 function MyNavbar() {
+
+     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
     return (
-        // <nav>
-        //     <img src='../src/assets/burger-menu.svg' alt='Navigation Menu'/>
-        //     {/* <div className='NavItems'>
-        //         <NavLink to="Home">Home</NavLink>
-        //         <NavLink to="countries">Countries</NavLink>
-        //         <NavLink to="about">About</NavLink>
-        //     </div> */}
-        //     <img src="../src/assets/logo.svg" alt='Travel Logo' className='TravelLogo'/>
-        //     <div className='UserAreaLinks'>
-        //         <NavLink to="">Log In</NavLink>
-        //         <NavLink to="">Sign Up</NavLink>
-        //     </div>
-        // </nav>
         <nav>
             <div className="NavContainer">
-                <img src="../src/assets/burger-menu.svg" alt="Navigation Menu" />
+                <img
+                    src="../src/assets/burger-menu.svg"
+                    alt="Navigation Menu"
+                    onClick={toggleModal}
+                    className='BurgerIcon'
+                />
                 <div className='LogoContainer'>
-                    <NavLink to="home"><img src="../src/assets/logo.svg" alt='Travel Logo' className='TravelLogo' /></NavLink>
-                </div>
-                <div className='UserAreaLinks'>
-                    {/* <NavLink to="">Log In</NavLink> */}
-                    <NavLink to="">Sign Up</NavLink>
+                    <NavLink to="home">
+                        <img
+                            src="../src/assets/logo.svg"
+                            alt='Travel Logo'
+                            className='TravelLogo'
+                        />
+                    </NavLink>
                 </div>
             </div>
+            <Modal isOpen={isModalOpen} onClose={toggleModal} />
         </nav>
     );
 }
