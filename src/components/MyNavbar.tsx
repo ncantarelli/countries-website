@@ -9,7 +9,7 @@ function MyNavbar() {
                 <NavLink to="countries">Countries</NavLink>
                 <NavLink to="about">About</NavLink>
             </div>
-            <img src="../src/assets/logo.svg" alt='Travel Logo'/>
+            <img src="../src/assets/logo.svg" alt='Travel Logo' />
         </nav>
     );
 }

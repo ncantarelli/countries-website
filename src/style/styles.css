@@ -37,7 +37,7 @@ nav a:hover {
 }
 
 h1 {
-    margin-top: 3.50vh; /* This is 30px moved to viewport height */
+    margin-top: 3.60vh; /* This is 30px moved to viewport height */
     margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
     margin-left: 1vw; /* This is 17.1px moved to viewport height */
     margin-right: 1vw; /* This is 17.1px moved to viewport height */
@@ -91,12 +91,18 @@ footer {
 .HeaderContainer h1 {
     /* display: flex; */
     /* align-items: flex-start; */
-    margin: 30px 20px 20px 0px;
+    margin: 3.60vh 0px 20px 0px;
     font-size: 40px;
 }
 
 .HeaderContainer img {
-    margin-top: 3.15vh;
+    margin-top: 3.60vh;
+}
+
+input {
+    border-radius: 30px;
+    padding: 7px 16px 7px 16px;
+    margin: 0 20px 0 20px;
 }
 
 .CardContainer {
@@ -104,7 +110,6 @@ footer {
     flex-direction: column;
     gap: 12px;
 }
-
 
 .CardContainer p {
     font-size: 0.875rem;
@@ -126,7 +131,7 @@ footer {
     border-radius: 30px;
     gap: 1vh;
     padding: 20px;
-    margin: 0 20px 0 20px;
+    margin: 0px 20px 0 20px;
 }
 
 .CountryTags {
