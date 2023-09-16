@@ -6,6 +6,7 @@ import ErrorPage from "./views/ErrorPage";
 import Countries from "./views/Countries";
 import Details from "./views/Details";
 import { useEffect } from "react";
+import Footer from "./components/Footer";
 function App() {
   
 
@@ -17,14 +18,12 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="countries" element={<Countries />} />
         <Route path="countries/:name" element={<Details/>}/>
-        {/* <Route path="*" element={<ErrorPage/>} /> */}
       </Route>
     )
   );
   
   return (
     <>
-      {/* <h1>Countries</h1> */}
       <RouterProvider router={router} />
       <Outlet/>
     </>
@@ -35,8 +34,8 @@ const Root = () => {
   return (
     <>
       <MyNavbar />
-      {/* <h2>This will be displayed in every view/page</h2> */}
-      <Outlet/>
+      <Outlet />
+      <Footer/>
     </>
   )
 }
