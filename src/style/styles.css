@@ -16,47 +16,6 @@ body {
     background-color: #F6F6F6;
 }
 
-/* nav {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    height: 8vh; /* Around 70px moved to viewport height*/ 
-    /* background-color: #FFFFFF; */
-    /* width: 100vw; Will adjust the screen to always fit 100% of the width */
-    /* margin: 0 20px 0 20px;
-} */
-/* nav a {
-    text-decoration: none;
-    color: #544EEE;
-    font-size: 1rem; This is 16px (technically 17.1px but who's checking?
-} */
-
-/* nav a:hover {
-    color: #544EEE;
-}
-
-.UserAreaLinks {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-}
-
-.UserAreaLinks a:first-child {
-    text-align: center;
-    color: #544EEE;
-    border-radius: 0.625rem;
-    padding: 7px 10px 7px 10px;
-}
-
-.UserAreaLinks a:last-child {
-    text-align: center;
-    color: #FFFFFF;
-    background-color: #544EEE;
-    padding: 7px 10px 7px 10px;
-    border-radius: 0.625rem;
-} */
-
 nav {
     display: flex;
     justify-content: center;
@@ -128,11 +87,13 @@ nav a:hover {
 }
 
 h1 {
-    margin-top: 3.60vh; /* This is 30px moved to viewport height */
-    margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
-    margin-left: 1vw; /* This is 17.1px moved to viewport height */
-    margin-right: 1vw; /* This is 17.1px moved to viewport height */
-    font-size: 2rem; /* This is 32px */
+    text-align: center;
+    font-size: 2.250rem; /* This is 32px */
+}
+
+h2 {
+    font-size: 1.625rem;
+    font-weight: 700;
 }
 
 h4 {

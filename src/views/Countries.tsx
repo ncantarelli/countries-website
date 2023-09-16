@@ -91,7 +91,6 @@ function Countries() {
             </div>
 
             <div className='CardContainer'>
-                {/* <input type='text' placeholder=' &#x1F50E; Your future favorite place' onChange={inputChangeHandler}></input> */}
                 {filteredCountries && filteredCountries.map((country) => {
                     return <div className="CountryCard" key={country.name?.common}>
                         <h4>{country.name?.common} {country.flag}</h4>
