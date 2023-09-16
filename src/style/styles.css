@@ -16,26 +16,107 @@ body {
     background-color: #F6F6F6;
 }
 
-nav {
+/* nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
     height: 8vh; /* Around 70px moved to viewport height*/ 
+    /* background-color: #FFFFFF; */
+    /* width: 100vw; Will adjust the screen to always fit 100% of the width */
+    /* margin: 0 20px 0 20px;
+} */
+/* nav a {
+    text-decoration: none;
+    color: #544EEE;
+    font-size: 1rem; This is 16px (technically 17.1px but who's checking?
+} */
+
+/* nav a:hover {
+    color: #544EEE;
+}
+
+.UserAreaLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.UserAreaLinks a:first-child {
+    text-align: center;
+    color: #544EEE;
+    border-radius: 0.625rem;
+    padding: 7px 10px 7px 10px;
+}
+
+.UserAreaLinks a:last-child {
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #544EEE;
+    padding: 7px 10px 7px 10px;
+    border-radius: 0.625rem;
+} */
+
+nav {
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    height: 8vh;
     background-color: #FFFFFF;
-    width: 100vw; /* Will adjust the screen to always fit 100% of the width */
+    width: 100vw;
+    position: relative;
+    /* Add relative positioning */
+}
+
+.NavContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    /* Adjusted width to account for margin */
 }
 
 nav a {
     text-decoration: none;
-    color: black;
-    font-size: 1rem; /* This is 16px (technically 17.1px but who's checking? */
+    color: #544EEE;
+    font-size: 1rem;
 }
 
 nav a:hover {
     color: #544EEE;
 }
 
+.UserAreaLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.UserAreaLinks a:first-child {
+    text-align: center;
+    color: #544EEE;
+    border-radius: 0.625rem;
+    padding: 7px 10px 7px 10px;
+}
+
+.UserAreaLinks a:last-child {
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #544EEE;
+    padding: 7px 10px 7px 10px;
+    border-radius: 0.625rem;
+}
+
+.LogoContainer {
+    position: absolute;
+    /* Add absolute positioning */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+}
 h1 {
     margin-top: 3.60vh; /* This is 30px moved to viewport height */
     margin-bottom: 2.50vh; /* This is 20px moved to viewport height */
@@ -80,6 +161,13 @@ footer {
     color: #544EEE;
 }
 
+.TopInfoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    /* gap: 12px; */
+}
+
 .HeaderContainer {
     display: flex;
     justify-content: space-between;
@@ -100,22 +188,60 @@ footer {
 }
 
 input {
+    cursor: pointer;
     border-radius: 30px;
+    color: #544EEE;
+    font-weight: 600;
+    background-color: #E5E4FC;
+    border: 2px solid #544EEE;
     padding: 7px 16px 7px 16px;
-    margin: 0 20px 0 20px;
+    margin: 10px 20px 10px 20px;
+    font-size: 1rem;
+    /* width: 300px; */
+}
+
+input::placeholder {
+    color: #9895e5;
+}
+
+/* .FilterBox {
+    display: none;
+} */
+
+.FilterBox {
+    display: flex;
+    border-radius: 30px;
+    /* border: 2px solid ; */
+    box-shadow: 0 4px 8px 0 #E5E4FC, 0 6px 20px 0 #E5E4FC;
+    background-color: white;
+    height: 15vh;
+    padding: 10px 16px 10px 16px;
+    margin: 0px 20px 0px 20px;
+}
+
+.FilterBox div {
+    display: flex;
+    flex-direction: column;
+}
+.FilterBox div p {
+    font-size: 0.8rem;
+    color: #544EEE;
+    background-color: white;
+    padding: 5px;
 }
 
 .CardContainer {
     display: flex;
     flex-direction: column;
+    width: 100vw;
     gap: 12px;
 }
 
 .CardContainer p {
     font-size: 0.875rem;
     font-weight: 700;
-    color: #FFFFFF;
-    background-color: #544EEE;
+    color: #544EEE;
+    background-color: #E5E4FC;
     padding: 7px 16px 7px 16px;
     border-radius: 0.625rem;
 }
@@ -126,7 +252,7 @@ input {
     align-items: flex-start;
     flex-direction: column;
     height: auto; /* Around 70px moved to viewport height*/
-    /* width: 23vw; */
+    width: auto;
     background-color: #FFFFFF;
     border-radius: 30px;
     gap: 1vh;

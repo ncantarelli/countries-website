@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
+import FilterBox from '../components/FilterBox';
 
 
 interface CountryType {
@@ -30,6 +31,7 @@ function Countries() {
     ]);
 
     const [inputText, setInputText] = useState("");
+    const [isFilterBoxOpen, setIsFilterBoxOpen] = useState(false); // useState to manage FilterBox visibility
 
     const fetchCountries = async () => {
         try {
@@ -64,28 +66,43 @@ function Countries() {
     });
     console.log('filteredCountries :>> ', filteredCountries);
 
+    const toggleFilterBox = () => {
+        setIsFilterBoxOpen(!isFilterBoxOpen);
+    };
+
     useEffect(() => {
       fetchCountries();
     }, []);
 
     return (
-        <div className='CardContainer'>
-            <div className='HeaderContainer'>
+        <>
+            <div className='TopInfoContainer'>
+                <div className='HeaderContainer'>
                 <h1>All Countries</h1>
-                <img src='../src/assets/filter-icon.svg' height={"47px"} width={"47px"} />
-            </div>
-            <SearchBar inputChangeHandler={inputChangeHandler}/>
-            {/* <input type='text' placeholder=' &#x1F50E; Your future favorite place' onChange={inputChangeHandler}></input> */}
-            {countries && countries.map((country) => {
-                return <div className="CountryCard" key={country.name?.common}>
-                    <h4>{country.name?.common} {country.flag}</h4>
-                    <div className='CountryTags'>
-                        <p>{country.region}</p>
-                        <p>Reviews</p>
-                    </div>
+                <img
+                    src='../src/assets/filter-icon.svg'
+                    height={"47px"}
+                    width={"47px"}
+                    onClick={toggleFilterBox}
+                />
                 </div>
-            })}
-        </div>
+            {isFilterBoxOpen && <FilterBox />}
+            <SearchBar inputChangeHandler={inputChangeHandler} />
+            </div>
+
+            <div className='CardContainer'>
+                {/* <input type='text' placeholder=' &#x1F50E; Your future favorite place' onChange={inputChangeHandler}></input> */}
+                {filteredCountries && filteredCountries.map((country) => {
+                    return <div className="CountryCard" key={country.name?.common}>
+                        <h4>{country.name?.common} {country.flag}</h4>
+                        <div className='CountryTags'>
+                            <p>{country.region}</p>
+                            <p>Reviews</p>
+                        </div>
+                    </div>
+                })}
+            </div>
+        </>
     );
 }
 

@@ -7,7 +7,7 @@ interface SearchBarProps {
 const SearchBar = ({inputChangeHandler}: SearchBarProps) => {
   return (
       <>
-          <input type='text' placeholder=' &#x1F50E; Your future favorite place' onChange={inputChangeHandler}></input>
+          <input type='text' placeholder=' &#x1F50E; Type your future favorite place' onChange={inputChangeHandler}></input>
     </>
   )
 }
