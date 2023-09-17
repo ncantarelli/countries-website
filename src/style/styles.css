@@ -241,6 +241,11 @@ input:hover {
     gap: 12px;
 }
 
+.CardContainer a {
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+}
+
 .CardContainer p {
     font-size: 0.875rem;
     font-weight: 700;
@@ -261,7 +266,8 @@ input:hover {
     border-radius: 30px;
     gap: 1vh;
     padding: 20px;
-    margin: 0px 20px 0 20px;
+    margin: 0px 0px 0 20px;
+    
 }
 
 .CountryTags {

@@ -5,7 +5,7 @@ import About from "./views/About";
 import MyNavbar from "./components/MyNavbar";
 import ErrorPage from "./views/ErrorPage";
 import Countries from "./views/Countries";
-import Details from "./views/Details";
+// import Details from "./views/Details";
 import Footer from "./components/Footer";
 
 function App() {  
@@ -17,7 +17,7 @@ function App() {
         <Route index path="home" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="countries" element={<Countries />} />
-        <Route path="countries/:name" element={<Details/>}/>
+        {/* <Route path="countries/:name" element={`/country/${encodeURIComponent(country.name.common)}`}/> */}
       </Route>
     )
   );
@@ -35,7 +35,7 @@ const Root = () => {
     <>
       <MyNavbar />
       <Outlet />
-      <Footer />
+      <Footer/>
     </>
   )
 }

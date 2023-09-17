@@ -1,6 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import FilterBox from '../components/FilterBox';
+import { Link } from 'react-router-dom';
+
 
 
 interface CountryType {
@@ -87,27 +89,31 @@ function Countries() {
         <>
             <div className='TopInfoContainer'>
                 <div className='HeaderContainer'>
-                <h1>All Countries</h1>
-                <img
-                    src='../src/assets/filter-icon.svg'
-                    height={"47px"}
-                    width={"47px"}
-                    onClick={toggleFilterBox}
-                />
+                    <h1>All Countries</h1>
+                    <img
+                        src='../src/assets/filter-icon.svg'
+                        height={"47px"}
+                        width={"47px"}
+                        onClick={toggleFilterBox}
+                    />
                 </div>
-            {isFilterBoxOpen && <FilterBox onFilterChange={handleFilterChange}/>}
-            <SearchBar inputChangeHandler={inputChangeHandler} />
+                {isFilterBoxOpen && <FilterBox onFilterChange={handleFilterChange} />}
+                <SearchBar inputChangeHandler={inputChangeHandler} />
             </div>
 
             <div className='CardContainer'>
                 {filteredCountries && filteredCountries.map((country) => {
-                    return <div className="CountryCard" key={country.name?.common}>
-                        <h4>{country.name?.common} {country.flag}</h4>
-                        <div className='CountryTags'>
-                            <p>{country.region}</p>
-                            <p>Reviews</p>
+                    return (
+                            <Link to={`/country/${encodeURIComponent(country.name.common)}`} key={country.name?.common}>
+                        <div className="CountryCard" key={country.name?.common}>
+                            <h4>{country.name?.common} {country.flag}</h4>
+                            <div className='CountryTags'>
+                                <p>{country.region}</p>
+                                <p>Reviews</p>
+                            </div>
                         </div>
-                    </div>
+                            </Link>
+                    );
                 })}
             </div>
         </>
