@@ -31,7 +31,8 @@ function Countries() {
     ]);
 
     const [inputText, setInputText] = useState("");
-    const [isFilterBoxOpen, setIsFilterBoxOpen] = useState(false); // useState to manage FilterBox visibility
+    const [isFilterBoxOpen, setIsFilterBoxOpen] = useState(false); // useState to manage the FilterBox visibility
+    const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
     const fetchCountries = async () => {
         try {
@@ -59,9 +60,17 @@ function Countries() {
         setInputText(text);
     };
 
+    const handleFilterChange = (filters: string[]) => {
+        setSelectedFilters(filters);
+    };
+
     const filteredCountries = countries.filter((country) => {
         const normalizedCountryName = country.name.common.toLowerCase();
         const normalizedInputText = inputText.toLowerCase()
+        if (selectedFilters.length > 0 && !selectedFilters.includes(country.region)) {
+            return false;
+        };
+
         return normalizedCountryName.includes(normalizedInputText);
     });
     console.log('filteredCountries :>> ', filteredCountries);
@@ -86,7 +95,7 @@ function Countries() {
                     onClick={toggleFilterBox}
                 />
                 </div>
-            {isFilterBoxOpen && <FilterBox />}
+            {isFilterBoxOpen && <FilterBox onFilterChange={handleFilterChange}/>}
             <SearchBar inputChangeHandler={inputChangeHandler} />
             </div>
 

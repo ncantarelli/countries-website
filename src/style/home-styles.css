@@ -35,3 +35,7 @@ h2 {
     font-weight: 700;
     color: #544EEE;
 }
+
+.CountryDisplay a:hover {
+    color: #34319b;
+}

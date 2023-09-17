@@ -3,7 +3,8 @@ import React from 'react'
 function Footer() {
   return (
       <footer>
-          Here be footers
+          <img src='../src/assets/logo.svg'/>
+          <p>© Copyright 2023 by Travol, Inc.</p>
       </footer>
   )
 }
