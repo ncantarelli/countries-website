@@ -33,19 +33,19 @@ function Countries() {
     ]);
 
     const [inputText, setInputText] = useState("");
-    const [isFilterBoxOpen, setIsFilterBoxOpen] = useState(false); // useState to manage the FilterBox visibility
-    const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+    const [isFilterBoxOpen, setIsFilterBoxOpen] = useState(false); //! useState to manage the FilterBox visibility
+    const [selectedFilters, setSelectedFilters] = useState<string[]>([]); //! useState to manage which filters are selected and handle the data displayed
 
-    const fetchCountries = async () => {
+    const fetchCountries = async () => { //! Fetch and receiving the data
         try {
             const response = await fetch("https://restcountries.com/v3.1/independent?status=true");
             const data = await response.json();
 
             if (Array.isArray(data)) {
                 const countriesList = data as CountryType[];
-                countriesList.sort((a, b) => {
+                countriesList.sort((a, b) => { 
                     return a.name.common.localeCompare(b.name.common);
-                });
+                }); //! Sorting countries from A to Z to show alphabetically on the cards
                 setCountries(countriesList);
             } else {
                 console.error("Data is not an array.");
@@ -57,6 +57,7 @@ function Countries() {
     };
     
     const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+
         console.log('event.target.value :>> ', event.target.value);
         const text = event.target.value;
         setInputText(text);
@@ -64,22 +65,25 @@ function Countries() {
 
     const handleFilterChange = (filters: string[]) => {
         setSelectedFilters(filters);
-    };
+    }; //! Filter handler
 
     const filteredCountries = countries.filter((country) => {
+
         const normalizedCountryName = country.name.common.toLowerCase();
         const normalizedInputText = inputText.toLowerCase()
+
         if (selectedFilters.length > 0 && !selectedFilters.includes(country.region)) {
             return false;
         };
 
         return normalizedCountryName.includes(normalizedInputText);
-    });
+    }); //! Function that receives the countries and input from search bar and brings them both down to lowercase to compare and do the search
+
     console.log('filteredCountries :>> ', filteredCountries);
 
     const toggleFilterBox = () => {
         setIsFilterBoxOpen(!isFilterBoxOpen);
-    };
+    }; //! function for handling the opening and closing of the filter box
 
     useEffect(() => {
       fetchCountries();
@@ -95,7 +99,7 @@ function Countries() {
                         height={"47px"}
                         width={"47px"}
                         onClick={toggleFilterBox}
-                    />
+                    /> {/* This has onClick event to toggle the filterbox open and closed */}
                 </div>
                 {isFilterBoxOpen && <FilterBox onFilterChange={handleFilterChange} />}
                 <SearchBar inputChangeHandler={inputChangeHandler} />
@@ -104,15 +108,18 @@ function Countries() {
             <div className='CardContainer'>
                 {filteredCountries && filteredCountries.map((country) => {
                     return (
-                            <Link to={`/country/${encodeURIComponent(country.name.common)}`} key={country.name?.common}>
-                        <div className="CountryCard" key={country.name?.common}>
-                            <h4>{country.name?.common} {country.flag}</h4>
-                            <div className='CountryTags'>
-                                <p>{country.region}</p>
-                                <p>Reviews</p>
+                        <Link
+                            to={`/country/${encodeURIComponent(country.name.common)}`}
+                            key={country.name?.common}
+                        > {/* This makes the area clickable and opens a new view when clicked on */}
+                            <div className="CountryCard" key={country.name?.common}>
+                                <h4>{country.name?.common} {country.flag}</h4>
+                                <div className='CountryTags'>
+                                    <p>{country.region}</p>
+                                    <p>Reviews</p>
+                                </div>
                             </div>
-                        </div>
-                            </Link>
+                        </Link>
                     );
                 })}
             </div>

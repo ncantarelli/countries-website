@@ -14,13 +14,12 @@ function FilterBox({onFilterChange}: Props) {
             updatedFilters = selectedFilters.filter((f) => f !== filter);
         } else {
             updatedFilters = [...selectedFilters, filter];
-        }
+        };
 
         setSelectedFilters(updatedFilters);
 
-        // Adds or removes the "Selected" class
         const filterOptions = document.querySelectorAll('.FilterBox div p');
-        filterOptions.forEach((option) => {
+        filterOptions.forEach((option) => { //! Adds the class 'selected' or 'unselected' to make the button change appearance
             if (updatedFilters.includes(option.textContent || '')) {
                 option.classList.add('Selected');
             } else {

@@ -121,6 +121,7 @@ footer {
     margin-top: 25px;
     gap: 15px;
     background-color: #E5E4FC;
+    flex-shrink: 0;
 }
 
 footer p:last-child {
@@ -167,16 +168,17 @@ input {
     padding: 7px 16px 7px 16px;
     margin: 10px 20px 20px 20px;
     font-size: 1rem;
+    outline: none;
 }
 
 input::placeholder {
     color: #9895e5;
 }
 
-input:hover {
+/* input:hover {
     background-color: #c5c5dc;
     color: #8381c6;
-}
+} */
 
 .FilterBox {
     display: flex;
@@ -224,6 +226,10 @@ input:hover {
     text-align: center;
 }
 
+.Selected:hover {
+    background-color: #34319b;
+}
+
 .Unselected {
     font-size: 1rem;
     font-weight: 700;
@@ -234,11 +240,17 @@ input:hover {
     text-align: center;
 }
 
+.Unselected:hover {
+    background-color: #c0bfbf;
+}
+
 .CardContainer {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     width: 100vw;
     gap: 12px;
+    min-height: 60vh;
 }
 
 .CardContainer a {
@@ -266,7 +278,7 @@ input:hover {
     border-radius: 30px;
     gap: 1vh;
     padding: 20px;
-    margin: 0px 0px 0 20px;
+    margin: 0px 0px 0px 0px;
     
 }
 
