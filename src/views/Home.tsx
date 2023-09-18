@@ -1,6 +1,5 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom';
-
+import "../style/home-styles.css"
 function Home() {
     return (
         <div>
@@ -17,18 +16,22 @@ function Home() {
             <div className='CountryDisplayBox'>
                 <img src='../src/assets/mongolia.png' className='RandomCountryImage' />
                 <div className='CountryDisplayInfo'>
+                    <p className='SuggestedTag'>Our Suggestion!</p>
                     <h4>Mongolia 🇲🇳</h4>
                     <div>
                         <p>Asia</p>
                         <p>Reviews</p>
                     </div>
+                    <p className='CountryDescription'>Mongolia, a landlocked country in East Asia, is known for its vast and rugged landscapes, including the Gobi Desert and the Altai Mountains. Its nomadic culture, characterized by traditional herding practices and a deep connection to the land, has persisted for centuries.</p>
                 </div>
             </div>
             {/* <div>
                 <h2>Our Suggestion</h2>
             </div> */}
-            <div>
-                <h2>Last reviews</h2>
+            <div className='ReviewsHolder'>
+                <div className='ReviewsCard'>
+                    <h2>Last reviews</h2>
+                </div>
             </div>
         </div>
     );

@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const ReviewCard = (props: Props) => {
+const ReviewCard = () => {
     return (
         <div>
             <h2>Here be review cards</h2>

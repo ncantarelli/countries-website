@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import FilterBox from '../components/FilterBox';
 import { Link } from 'react-router-dom';

@@ -47,7 +47,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    max-width: 90vw;
+    max-width: 89vw;
     margin: 20px 20px 0 20px;
     border-radius: 30px;
     /* padding: 0px 16px 40px 16px; */
@@ -63,10 +63,10 @@ h2 {
     /* align-self: stretch; */
 }
 
-.CountryDisplayBox h4 {
-    margin-top: 20px;
-    /* justify-content: flex-start; */
-}
+/* .CountryDisplayBox h4 {
+    margin-top: 10px;
+    justify-content: flex-start;
+} */
 
 /* .CountryDisplayBox div {
     display: flex;
@@ -85,11 +85,33 @@ h2 {
     gap: 8px;
 }
 
+.CountryDescription {
+    display: flex;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    color: #646668;
+}
+
+.SuggestedTag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-top: 20px;
+    background-color: #E5E4FC;
+    color: #544EEE;
+    padding: 7px 16px 7px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
 .CountryDisplayBox div div p:first-child {
     font-size: 1rem;
     font-weight: 700;
-    color: #FFFFFF;
-    background-color: #544EEE;
+    color: #544EEE;
+    background-color: #E5E4FC;
     border-radius: 10px;
     padding: 7px 16px 7px 16px;
     text-align: center;

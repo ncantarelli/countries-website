@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 
 interface SearchBarProps {
     inputChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;

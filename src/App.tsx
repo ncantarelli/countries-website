@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { createRoutesFromElements, createBrowserRouter, Route, RouterProvider, Outlet, } from "react-router-dom";
+import { createRoutesFromElements, createBrowserRouter, Route, RouterProvider, Outlet} from "react-router-dom";
+import "./style/styles.css"
 import Home from "./views/Home";
 import About from "./views/About";
 import MyNavbar from "./components/MyNavbar";
@@ -17,7 +17,7 @@ function App() {
 
     createRoutesFromElements(
       <Route path="/" element={<Root/>} errorElement={<ErrorPage/>} >
-        <Route index path="home" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="countries" element={<Countries />} />
         <Route path="registration" element={<Registration />} />
