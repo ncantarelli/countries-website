@@ -30,10 +30,10 @@ function Modal({ isOpen, onClose }: ModalProps) {
                 </div>
                 <hr></hr>
                 <div className="UserAreaLinks">
-                    <NavLink to="" onClick={onClose}>
+                    <NavLink to="login" onClick={onClose}>
                         Log In
                     </NavLink>
-                    <NavLink to="" onClick={onClose}>
+                    <NavLink to="registration" onClick={onClose}>
                         Sign Up
                     </NavLink>
                 </div>

@@ -5,8 +5,11 @@ import About from "./views/About";
 import MyNavbar from "./components/MyNavbar";
 import ErrorPage from "./views/ErrorPage";
 import Countries from "./views/Countries";
+import Registration from "./views/Registration";
 // import Details from "./views/Details";
 import Footer from "./components/Footer";
+import Login from "./views/Login";
+import CountryDetails from "./views/CountryDetails";
 
 function App() {  
 
@@ -17,7 +20,9 @@ function App() {
         <Route index path="home" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="countries" element={<Countries />} />
-        {/* <Route path="countries/:name" element={`/country/${encodeURIComponent(country.name.common)}`}/> */}
+        <Route path="registration" element={<Registration />} />
+        <Route path="login" element={<Login />} />
+        <Route path="country/:name" element={<CountryDetails/>}/>
       </Route>
     )
   );

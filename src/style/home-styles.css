@@ -1,3 +1,4 @@
+
 .HeroImage {
     width: 100vw;
     height: 70vh;
@@ -8,25 +9,25 @@
     justify-content: center;
     align-items: center;
     color: white;
-    margin-bottom: 45px;
+    margin-bottom: 10px;
 }
 
 h2 {
-    margin: 0 20px 0 20px;
+    margin: 20px 20px 0 20px;
 }
 
 .HeroImage h1 {
-    margin-bottom: 100px;
+    margin-bottom: 170px;
 }
 
-.CountryDisplay {
+.CountryDisplayTitle {
     display: flex;
     margin: 0 20px 0 0;
     justify-content: space-between;
     align-items: center;
 }
 
-.CountryDisplay a {
+.CountryDisplayTitle a {
     display: flex;
     flex-direction: row;
     gap: 8px;
@@ -34,8 +35,72 @@ h2 {
     text-decoration: none;
     font-weight: 700;
     color: #544EEE;
+    margin-top: 20px;
 }
 
-.CountryDisplay a:hover {
+.CountryDisplayTitle a:hover {
     color: #34319b;
+}
+
+.CountryDisplayBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    max-width: 90vw;
+    margin: 20px 20px 0 20px;
+    border-radius: 30px;
+    /* padding: 0px 16px 40px 16px; */
+    background-color: white;
+}
+
+.RandomCountryImage {
+    height: 220px;
+    /* width: 42vh; */
+    border-radius: 30px 30px 0 0;
+    /* vertical-align: middle; */
+    /* margin: 0 20px 0 20px; */
+    /* align-self: stretch; */
+}
+
+.CountryDisplayBox h4 {
+    margin-top: 20px;
+    /* justify-content: flex-start; */
+}
+
+/* .CountryDisplayBox div {
+    display: flex;
+    gap: 8px;
+} */
+
+.CountryDisplayInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0px 16px 20px 16px;
+}
+
+.CountryDisplayInfo div {
+    display: flex;
+    gap: 8px;
+}
+
+.CountryDisplayBox div div p:first-child {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #544EEE;
+    border-radius: 10px;
+    padding: 7px 16px 7px 16px;
+    text-align: center;
+}
+
+.CountryDisplayBox div div p:last-child {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #646668;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    padding: 7px 16px 7px 16px;
+    text-align: center;
 }

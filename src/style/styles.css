@@ -89,6 +89,7 @@ nav a:hover {
 h1 {
     text-align: center;
     font-size: 2.250rem; /* This is 32px */
+    margin-top: 70px;
 }
 
 h2 {
@@ -118,7 +119,7 @@ footer {
     align-items: center;
     height: 10vh;
     width: 100vw;
-    margin-top: 25px;
+    margin-top: 30px;
     gap: 15px;
     background-color: #E5E4FC;
     flex-shrink: 0;
@@ -359,7 +360,7 @@ input::placeholder {
 .AboutPage {
     display: flex;
     flex-direction: column;
-    margin: 100px 20px 20px 20px;
+    margin: 30px 20px 20px 20px;
 }
 
 .AboutPage h1 {
@@ -369,7 +370,7 @@ input::placeholder {
 }
 
 .AboutPage h2 {
-    margin: 20px 20px 10px 0px;
+    margin: 30px 20px 10px 0px;
     font-size: 1.5rem;
     color: #544EEE;
 }

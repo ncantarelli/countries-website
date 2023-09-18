@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
-interface CountryType {
+export interface CountryType {
     name: NameType;
     flag: string;
     region: string;
@@ -99,7 +99,7 @@ function Countries() {
                         height={"47px"}
                         width={"47px"}
                         onClick={toggleFilterBox}
-                    /> {/* This has onClick event to toggle the filterbox open and closed */}
+                    /> {/* This has onClick event to toggle the filter box open and closed */}
                 </div>
                 {isFilterBoxOpen && <FilterBox onFilterChange={handleFilterChange} />}
                 <SearchBar inputChangeHandler={inputChangeHandler} />
