@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 interface ModalProps {
@@ -8,7 +7,7 @@ interface ModalProps {
 
 function Modal({ isOpen, onClose }: ModalProps) {
   if (!isOpen) {
-    return null; // Render nothing if the modal is closed
+    return null; // Renders nothing if the modal is closed
   }
 
     return (
@@ -18,7 +17,7 @@ function Modal({ isOpen, onClose }: ModalProps) {
             </button>
             <div className="modal-content">
                 <div className="NavItems">
-                    <NavLink to="/home" onClick={onClose}>
+                    <NavLink to="/" onClick={onClose}>
                         Home
                     </NavLink>
                     <NavLink to="/countries" onClick={onClose}>
@@ -30,10 +29,10 @@ function Modal({ isOpen, onClose }: ModalProps) {
                 </div>
                 <hr></hr>
                 <div className="UserAreaLinks">
-                    <NavLink to="login" onClick={onClose}>
+                    <NavLink to="/login" onClick={onClose}>
                         Log In
                     </NavLink>
-                    <NavLink to="registration" onClick={onClose}>
+                    <NavLink to="/registration" onClick={onClose}>
                         Sign Up
                     </NavLink>
                 </div>

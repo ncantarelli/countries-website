@@ -2,21 +2,20 @@ import { createRoutesFromElements, createBrowserRouter, Route, RouterProvider, O
 import "./style/styles.css"
 import Home from "./views/Home";
 import About from "./views/About";
-import MyNavbar from "./components/MyNavbar";
 import ErrorPage from "./views/ErrorPage";
 import Countries from "./views/Countries";
 import Registration from "./views/Registration";
-// import Details from "./views/Details";
-import Footer from "./components/Footer";
 import Login from "./views/Login";
 import CountryDetails from "./views/CountryDetails";
+import Footer from "./components/Footer";
+import MyNavbar from "./components/MyNavbar";
 
 function App() {  
 
   const router = createBrowserRouter(
 
     createRoutesFromElements(
-      <Route path="/" element={<Root/>} errorElement={<ErrorPage/>} >
+      <Route path="/" element={<Root />} errorElement={<ErrorPage />} >
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="countries" element={<Countries />} />
@@ -30,7 +29,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <Outlet/>
     </>
   );
 }

@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom';
 
 
 
-export interface CountryType {
+interface CountryType {
     name: NameType;
     flag: string;
     region: string;
     languages: {[key: string]: string};
     currencies: { [key: string]: string};
     maps: { googleMaps: string};
-}
+};
 
 interface NameType {
     common: string;
-}
+};
 
 function Countries() {
     console.log("Component Rendered");
@@ -40,7 +40,6 @@ function Countries() {
         try {
             const response = await fetch("https://restcountries.com/v3.1/independent?status=true");
             const data = await response.json();
-
             if (Array.isArray(data)) {
                 const countriesList = data as CountryType[];
                 countriesList.sort((a, b) => { 
@@ -58,7 +57,7 @@ function Countries() {
     
     const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 
-        console.log('event.target.value :>> ', event.target.value);
+        // console.log('event.target.value :>> ', event.target.value);
         const text = event.target.value;
         setInputText(text);
     };
@@ -79,7 +78,7 @@ function Countries() {
         return normalizedCountryName.includes(normalizedInputText);
     }); //! Function that receives the countries and input from search bar and brings them both down to lowercase to compare and do the search
 
-    console.log('filteredCountries :>> ', filteredCountries);
+    // console.log('filteredCountries :>> ', filteredCountries);
 
     const toggleFilterBox = () => {
         setIsFilterBoxOpen(!isFilterBoxOpen);

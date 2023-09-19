@@ -45,8 +45,14 @@
     margin: 95px 0px 0 20px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.40);
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(137, 137, 137, 0.4);
     position: absolute;
+    cursor: pointer;
+    z-index: 998;
+}
+
+.GoBackArrow:hover {
+        background: rgba(91, 91, 91, 0.4);
 }
 
 .DetailsHeader h1 {
@@ -69,6 +75,7 @@
     flex-direction: column;
     gap: 16px;
     font-size: 1rem;
+    margin: 0 0 36px 0;
 }
 
 .CountrySpecifications div {
@@ -111,7 +118,7 @@
 }
 
 .ReviewsHolder {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-color: #F6F6F6;
 }
 

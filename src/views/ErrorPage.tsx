@@ -18,7 +18,7 @@ function ErrorPage() {
         <div>
             <MyNavbar />
             <h1>Nothing to see here 😭</h1>
-            <h3>{error.error.message}</h3>
+            {/* <h3>{error.error.message}</h3> */}
         </div>
     );
 }

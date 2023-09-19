@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Modal from './Modal';
 
@@ -20,7 +20,7 @@ function MyNavbar() {
                     className='BurgerIcon'
                 />
                 <div className='LogoContainer'>
-                    <NavLink to="home">
+                    <NavLink to="/">
                         <img
                             src="../src/assets/logo.svg"
                             alt='Travel Logo'
