@@ -1,7 +1,7 @@
 
 .HeroImage {
     width: 100vw;
-    height: 70vh;
+    height: 60vh;
     background-image: url(../assets/mobile-hero-image.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,7 @@ h2 {
 }
 
 .HeroImage h1 {
-    margin-bottom: 170px;
+    margin-bottom: 150px;
 }
 
 .CountryDisplayTitle {
@@ -100,8 +100,8 @@ h2 {
     justify-content: center;
     font-size: 1rem;
     margin-top: 20px;
-    background-color: #E5E4FC;
-    color: #544EEE;
+    background-color: #e3fbec;
+    color: #44915e;
     padding: 7px 16px 7px 16px;
     border-radius: 10px;
     font-weight: 700;

@@ -9,7 +9,7 @@ interface CountryType {
   flag: string;
   region: string;
   languages: {[key: string]: string};
-  currencies: { [key: string]: string};
+  currencies: { [key: string]:{name: string , symbol: string}};
   population: number;
   maps: { googleMaps: string };
 };
@@ -49,8 +49,8 @@ const CountryDetails = () => {
       if (Array.isArray(result)) {
         // const singleCountry = result as CountryType[];
         // setCountry(singleCountry)
-        const independentCountries = result.filter((country) => country.independent === true) as CountryType[];
-        setCountry(independentCountries);
+        const independentCountry = result.filter((country) => country.independent === true) as CountryType[];
+        setCountry(independentCountry);
       } else {
         console.error("Data is not an array.");
       }
@@ -96,7 +96,9 @@ const CountryDetails = () => {
             </div>
             <div>
               <img src='../src/assets/currency-icon.svg' alt="a pair of coins representing the currency" />
-              <p>Currency:<span></span></p>
+              <p>Currency:{country.currencies && Object.values(country.currencies).map((currency) => {
+                return <span key={currency.name}>{" " + currency.name}</span>
+              })}</p>
             
             </div>
           </div>
