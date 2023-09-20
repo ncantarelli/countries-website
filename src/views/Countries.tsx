@@ -10,8 +10,8 @@ interface CountryType {
     flag: string;
     region: string;
     languages: {[key: string]: string};
-    currencies: { [key: string]: string};
-    maps: { googleMaps: string};
+    currencies: { [key: string]:{name: string , symbol: string}};
+    maps: { OpenStreetMaps: string};
 };
 
 interface NameType {
@@ -28,7 +28,7 @@ function Countries() {
             region: "",
             languages: {},
             currencies: {},
-            maps: {googleMaps:""},
+            maps: {OpenStreetMaps:""},
         }
     ]);
 
@@ -84,6 +84,8 @@ function Countries() {
         setIsFilterBoxOpen(!isFilterBoxOpen);
     }; //! function for handling the opening and closing of the filter box
 
+    
+    
     useEffect(() => {
       fetchCountries();
     }, []);
@@ -100,7 +102,8 @@ function Countries() {
                         onClick={toggleFilterBox}
                     /> {/* This has onClick event to toggle the filter box open and closed */}
                 </div>
-                {isFilterBoxOpen && <FilterBox onFilterChange={handleFilterChange} />}
+                {isFilterBoxOpen && <FilterBox
+                    onFilterChange={handleFilterChange} />}
                 <SearchBar inputChangeHandler={inputChangeHandler} />
             </div>
 

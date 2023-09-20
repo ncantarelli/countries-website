@@ -11,7 +11,7 @@ interface CountryType {
   languages: {[key: string]: string};
   currencies: { [key: string]:{name: string , symbol: string}};
   population: number;
-  maps: { googleMaps: string };
+  maps: { OpenStreetMaps: string };
 };
 
 
@@ -30,7 +30,7 @@ const CountryDetails = () => {
       languages: {},
       currencies: {},
       population: 0,
-      maps: { googleMaps: "" },
+      maps: { OpenStreetMaps: "" },
     }
   ]);
 

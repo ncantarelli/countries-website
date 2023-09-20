@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 type Props = {
     onFilterChange: (filters: string[]) => void;
+    // selectedFilters: string[];
 }
 
 function FilterBox({onFilterChange}: Props) {

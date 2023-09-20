@@ -1,4 +1,4 @@
-import { createRoutesFromElements, createBrowserRouter, Route, RouterProvider, Outlet} from "react-router-dom";
+import { createRoutesFromElements, createBrowserRouter, Route, RouterProvider, Outlet, ScrollRestoration} from "react-router-dom";
 import "./style/styles.css"
 import Home from "./views/Home";
 import About from "./views/About";
@@ -21,14 +21,14 @@ function App() {
         <Route path="countries" element={<Countries />} />
         <Route path="registration" element={<Registration />} />
         <Route path="login" element={<Login />} />
-        <Route path="country/:name" element={<CountryDetails/>}/>
+        <Route path="country/:name" element={<CountryDetails />} />
       </Route>
     )
   );
-  
+
   return (
     <>
-      <RouterProvider router={router} />
+      <RouterProvider router={router} />   
     </>
   );
 }
@@ -38,8 +38,10 @@ const Root = () => {
     <>
       <MyNavbar />
       <Outlet />
-      <Footer/>
+      <Footer />
+      <ScrollRestoration/>
     </>
   )
 }
+
 export default App
