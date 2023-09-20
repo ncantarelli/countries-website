@@ -19,7 +19,7 @@ interface NameType {
 };
 
 function Countries() {
-    console.log("Component Rendered");
+    // console.log("Component Rendered");
 
     const [countries, setCountries] = useState<CountryType[]>([
         {
@@ -48,13 +48,20 @@ function Countries() {
                 setCountries(countriesList);
             } else {
                 console.error("Data is not an array.");
-            }
+            };
         
         } catch (error) {
             console.error("Error fetching countries: ", error);
         };
     };
-    
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 
         // console.log('event.target.value :>> ', event.target.value);
@@ -69,7 +76,7 @@ function Countries() {
     const filteredCountries = countries.filter((country) => {
 
         const normalizedCountryName = country.name.common.toLowerCase();
-        const normalizedInputText = inputText.toLowerCase()
+        const normalizedInputText = inputText.toLowerCase();
 
         if (selectedFilters.length > 0 && !selectedFilters.includes(country.region)) {
             return false;
@@ -87,7 +94,25 @@ function Countries() {
     
     
     useEffect(() => {
-      fetchCountries();
+        fetchCountries();
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const scrollThreshold = 200; // Adjust this value as needed
+            const scrollButton = document.querySelector('.scroll-to-top') as HTMLElement;
+
+            if (scrollY > scrollThreshold) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            };
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
@@ -125,8 +150,12 @@ function Countries() {
                     );
                 })}
             </div>
+            <div className="scroll-to-top" onClick={scrollToTop}>
+                {/* <img src='../src/assets/back-to-top-button.svg' /> */}
+                <button>Back to Top</button>
+            </div>
         </>
     );
-}
+};
 
 export default Countries

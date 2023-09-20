@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
-// import useScrollRestoration from "../hooks/useScrollRestoration"
 import "../style/home-styles.css"
-
+import RandomItemFetcher from '../components/RandomCountryCard';
 
 function Home() {
+
     return (
         <div>
             <div className='HeroImage'>
@@ -18,7 +18,8 @@ function Home() {
             </div>
             <div className='CountryDisplayBox'>
                 <img src='../src/assets/mongolia.png' className='RandomCountryImage' />
-                <div className='CountryDisplayInfo'>
+                <RandomItemFetcher/>
+                {/* <div className='CountryDisplayInfo'>
                     <p className='SuggestedTag'>Our Suggestion!</p>
                     <h4>Mongolia 🇲🇳</h4>
                     <div>
@@ -26,8 +27,9 @@ function Home() {
                         <p>Reviews</p>
                     </div>
                     <p className='CountryDescription'>Mongolia, a landlocked country in East Asia, is known for its vast and rugged landscapes, including the Gobi Desert and the Altai Mountains. Its nomadic culture, characterized by traditional herding practices and a deep connection to the land, has persisted for centuries.</p>
-                </div>
+                </div> */}
             </div>
+            {/* <RandomItemFetcher/> */}
             {/* <div>
                 <h2>Our Suggestion</h2>
             </div> */}

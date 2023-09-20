@@ -18,25 +18,25 @@ body {
 
 nav {
     display: flex;
-    justify-content: center;
-    /* Center content horizontally */
-    align-items: center;
-    /* Center content vertically */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
     height: 8vh;
     background-color: #FFFFFF;
     width: 100vw;
     position: fixed;
-    top: 0px;
-    z-index: 999;
-    /* Add relative positioning */
+    top: 0vh;
+    z-index: 999; /* Adds relative positioning */
+}
+
+a {
+    text-decoration: none;
 }
 
 .NavContainer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: calc(100% - 40px);
-    /* Adjusted width to account for margin */
+    align-items: center; /* width: calc(100% - 40px); */
+    width: calc(100% - 10.4vw); /*! This is around 40px and adjusted width to account for margin */
 }
 
 nav a {
@@ -55,14 +55,18 @@ nav a:hover {
 .UserAreaLinks {
     display: flex;
     flex-direction: row;
-    gap: 4px;
+    /* gap: 4px; */
+    gap: 1vw; /*! This is around 4px */
 }
 
 .UserAreaLinks a:first-child {
     text-align: center;
     color: #544EEE;
+    /* background-color: #E5E4FC; */
     border-radius: 0.625rem;
-    padding: 7px 10px 7px 10px;
+    /* padding: 7px 10px 7px 10px; */
+    /* padding: 1vh 2.5vw 1vh 2.5vw; */
+    padding: 0.85vh 2.55vw 0.85vh 2.55vw;
 }
 
 .UserAreaLinks a:first-child:hover {
@@ -73,7 +77,10 @@ nav a:hover {
     text-align: center;
     color: #FFFFFF;
     background-color: #544EEE;
-    padding: 7px 10px 7px 10px;
+    /* padding: 7px 10px 7px 10px; */
+    padding: 0.85vh 2.55vw 0.85vh 2.55vw;
+    /* padding: 1vh 2.5vw 1vh 2.5vw;  */
+    /*! This is around 7px and 10px */
     border-radius: 0.625rem;
 }
 
@@ -89,8 +96,9 @@ nav a:hover {
 
 h1 {
     text-align: center;
-    font-size: 2.250rem; /* This is 32px */
-    margin-top: 70px;
+    font-size: 2.500rem; /*! This is 32px */
+    /* margin-top: 70px; */
+    margin-top: 8vh; /*! This is around 70px */
 }
 
 h2 {
@@ -121,7 +129,8 @@ footer {
     height: 10vh;
     width: 100vw;
     /* margin-top: 30px; */
-    gap: 15px;
+    /* gap: 15px; */
+    gap: 1.8vh; /*! This is 15px */
     background-color: #E5E4FC;
     flex-shrink: 0;
 }
@@ -147,13 +156,14 @@ footer p:last-child {
 .HeaderContainer {
     display: flex;
     justify-content: space-between;
-    margin: 70px 20px 0 20px;
+    margin: 8vh 5vw 0 5vw; /*! This is standard margins for right and left, 20px each. Also 70px for the top margin so that it doesn't get covered by NavBar*/
 }
 
 .HeaderContainer h1 {
     color: #15141B;
-    margin: 3.60vh 0px 20px 0px;
-    font-size: 40px;
+    /* margin: 3.60vh 0px 20px 0px; */
+    margin: 3.60vh 0 2.3vh 0;
+    font-size: 2.500rem;
 }
 
 .HeaderContainer img {
@@ -162,13 +172,18 @@ footer p:last-child {
 
 input {
     cursor: pointer;
-    border-radius: 30px;
+    /* border-radius: 30px; */
+    border-radius: 3.15vh;
     color: #544EEE;
     font-weight: 600;
     background-color: #E5E4FC;
-    border: 2px solid #544EEE;
-    padding: 7px 16px 7px 16px;
-    margin: 10px 20px 20px 20px;
+    border: 0.25vh solid #544EEE;
+    /* border: 2px solid #544EEE; */
+    /* padding: 7px 16px 7px 16px; */
+    padding: 0.85vh 4.1vw 0.85vh 4.1vw; 
+    /* This is around 7px and 10px */
+    /* margin: 10px 20px 20px 20px; */
+    margin: 1vh 5vw 2.5vh 5vw;
     font-size: 1rem;
     outline: none;
 }
@@ -186,16 +201,20 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px 0 #E5E4FC, 0 6px 20px 0 #E5E4FC;
+    /* border-radius: 30px; */
+    border-radius: 3.50vh;
+    /* box-shadow: 0 4px 8px 0 #E5E4FC, 0 6px 20px 0 #E5E4FC; */
+    box-shadow: 0 0.70vh 1vw 0 #E5E4FC, 0 1vh 3vw 0 #E5E4FC;
     background-color: white;
     height: auto;
-    padding: 20px;
-    margin: 0px 20px 10px 20px;
+    /* padding: 20px; */
+    padding: 2.6vh 5vw 2.6vh 5vw;
+    /* margin: 0px 20px 10px 20px; */
+    margin: 0vh 5vw 1.2vh 5vw;
 }
 
 .FilterBox h4 {
-    margin: 0 20px 10px 20px;
+    margin: 0vh 5vw 1.2vh 5vw;
 }
 
 .FilterOptions {
@@ -390,4 +409,30 @@ input::placeholder {
 
 .AboutPage span {
     color: #9895e5;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+.scroll-to-top button {
+    background-color: #534eee;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+/* .scroll-to-top button:hover {
+    background-color: #34319b;
+} */
+
+.scroll-to-top img {
+    height: 40px;
+    width: 40px;
 }

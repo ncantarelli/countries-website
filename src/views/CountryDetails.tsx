@@ -71,7 +71,14 @@ const CountryDetails = () => {
       <img src='../src/assets/arrow-left.svg' className='GoBackArrow' onClick={goBack} />
       <img className="HeaderImage" src='../src/assets/afghanistan.png' />
       <div className='DetailsHeader'>
-        <h1>{name}</h1>
+        <h1>
+          {name}
+          {simplifiedCountry && simplifiedCountry.map((country) => {
+          return (
+            <span key={country.flag}>{country.flag}</span>
+          );
+        })}
+        </h1>
         <p>Asia</p>
       </div>
 

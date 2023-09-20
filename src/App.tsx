@@ -31,7 +31,7 @@ function App() {
       <RouterProvider router={router} />   
     </>
   );
-}
+};
 
 const Root = () => {
   return (
@@ -39,9 +39,9 @@ const Root = () => {
       <MyNavbar />
       <Outlet />
       <Footer />
-      <ScrollRestoration/>
+      <ScrollRestoration />
     </>
-  )
-}
+  );
+};
 
 export default App
