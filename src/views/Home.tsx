@@ -17,7 +17,6 @@ function Home() {
                 </NavLink>
             </div>
             <div className='CountryDisplayBox'>
-                <img src='../src/assets/mongolia.png' className='RandomCountryImage' />
                 <RandomItemFetcher/>
                 {/* <div className='CountryDisplayInfo'>
                     <p className='SuggestedTag'>Our Suggestion!</p>

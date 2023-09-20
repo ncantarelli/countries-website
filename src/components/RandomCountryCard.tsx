@@ -45,6 +45,7 @@ function RandomItemFetcher() {
                     key={randomItem.name.common}
                 >
                     <div className='CountryDisplayInfo'>
+                        <img src='../src/assets/mongolia.png' className='RandomCountryImage' />
                         <p className='SuggestedTag'>Our Suggestion!</p>
                         <h4>{randomItem.name.common} {randomItem.flag}</h4>
                         <div>
