@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface ItemType {
     name: NameType;
+    capital: [string];
     flag: string;
     region: string;
     languages: {[key: string]: string};

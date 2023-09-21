@@ -53,7 +53,7 @@ const CountryDetails = () => {
         setCountry(independentCountry);
       } else {
         console.error("Data is not an array.");
-      }
+      };
     } catch (error) {
       console.error("Error fetching country: ", error);
     };
@@ -72,10 +72,11 @@ const CountryDetails = () => {
       <img className="HeaderImage" src='../src/assets/afghanistan.png' />
       <div className='DetailsHeader'>
         <h1>
-          {name}
           {simplifiedCountry && simplifiedCountry.map((country) => {
-          return (
-            <span key={country.flag}>{country.flag}</span>
+            return (
+              <div key={country.name.common}>
+                <span>{country.name.common} </span>
+                <span>{country.flag}</span></div>
           );
         })}
         </h1>

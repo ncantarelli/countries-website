@@ -151,8 +151,8 @@ function Countries() {
                 })}
             </div>
             <div className="scroll-to-top" onClick={scrollToTop}>
-                {/* <img src='../src/assets/back-to-top-button.svg' /> */}
-                <button>Back to Top</button>
+                <img src='../src/assets/back-to-top-button.svg' />
+                {/* <button>Back to Top</button> */}
             </div>
         </>
     );

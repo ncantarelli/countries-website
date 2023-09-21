@@ -11,7 +11,7 @@
 }
 
 .CountryExplanation {
-    margin: 0 20px 20px 20px;
+    margin: 0 5vw 20px 5vw;
     /* font-size: 14px; */
     font-weight: 400;
     /* line-height: 140%; */
@@ -30,12 +30,15 @@
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    margin: 3.60vh 20px 20px 20px;
+    margin: 3.60vh 5vw 20px 5vw;
 }
 
 .DetailsHeader h1 {
     display: flex;
+    text-align: left;
     gap: 10px;
+    margin-top: 0;
+    font-size: 1.7rem;
 }
 
 .HeaderImage {
@@ -47,7 +50,7 @@
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    margin: 95px 0px 0 20px;
+    margin: 95px 0px 0 5vw;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.40);
     background: rgba(137, 137, 137, 0.4);
@@ -58,11 +61,6 @@
 
 .GoBackArrow:hover {
         background: rgba(91, 91, 91, 0.4);
-}
-
-.DetailsHeader h1 {
-    margin-top: 0;
-    font-size: 40px;
 }
 
 .DetailsHeader p {
@@ -88,7 +86,7 @@
     align-items: center;
     gap: 8px;
     font-weight: 700;
-    margin: 0px 20px 0 20px;
+    margin: 0px 5vw 0 5vw;
 }
 
 .CountrySpecifications p {
@@ -104,7 +102,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 20px 20px 20px;
+    margin: 30px 5vw 20px 5vw;
     padding: 7px 16px;
     border-radius: 10px;
     background-color: #544EEE;
@@ -129,6 +127,6 @@
 
 .ReviewsCard {
     background-color: #FFFFFF;
-    margin: 0 20px 20px 20px;
+    margin: 0 5vw 20px 5vw;
     border-radius: 30px;
 }

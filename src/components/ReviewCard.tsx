@@ -3,7 +3,7 @@
 const ReviewCard = () => {
     return (
         <div>
-            <h2>Here be review cards</h2>
+            <h2>Only for registered users</h2>
         </div>
     );
 };

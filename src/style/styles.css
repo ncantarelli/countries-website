@@ -3,13 +3,13 @@
     margin: 0;
 }
 
-#root {
+/* #root {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* text-align: center; */
-}
+/* } */
 
 body {
     font-size: 1vw; /* Sets the font size for the whole page to 17px. This will be used as reference for REM and EM units*/
@@ -277,7 +277,7 @@ input::placeholder {
 
 .CardContainer a {
     text-decoration: none;
-    margin: 0 20px 0 20px;
+    margin: 0 5vw 0 5vw;
 }
 
 .CardContainer p {
@@ -350,7 +350,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 20px 300px 20px;
+    margin: 20px 5vw 300px 5vw;
     gap: 20px;
 }
 
@@ -381,7 +381,7 @@ input::placeholder {
 .AboutPage {
     display: flex;
     flex-direction: column;
-    margin: 30px 20px 20px 20px;
+    margin: 30px 5vw 20px 5vw;
 }
 
 .AboutPage h1 {
@@ -391,7 +391,7 @@ input::placeholder {
 }
 
 .AboutPage h2 {
-    margin: 30px 20px 10px 0px;
+    margin: 30px 5vw 10px 0px;
     font-size: 1.5rem;
     color: #544EEE;
 }
@@ -433,6 +433,6 @@ input::placeholder {
 } */
 
 .scroll-to-top img {
-    height: 40px;
-    width: 40px;
+    height: 47px;
+    width: 47px;
 }
