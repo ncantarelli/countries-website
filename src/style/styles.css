@@ -139,6 +139,12 @@ footer p:last-child {
     font-size: 0.5rem;
 }
 
+footer div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
 .active {
     color: #34319b;
 }
@@ -281,6 +287,9 @@ input::placeholder {
 }
 
 .CardContainer p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-size: 0.875rem;
     font-weight: 700;
     color: #544EEE;
@@ -428,6 +437,17 @@ input::placeholder {
     cursor: pointer;
 }
 
+.scroll-to-top img {
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    background: rgba(137, 137, 137, 0.4);
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    /* border: none; */
+    /* padding: 10px 10px; */
+    cursor: pointer;
+}
+
 /* .scroll-to-top button:hover {
     background-color: #34319b;
 } */
@@ -435,4 +455,14 @@ input::placeholder {
 .scroll-to-top img {
     height: 47px;
     width: 47px;
+}
+
+.ReviewButton {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #646668;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    padding: 7px 16px 7px 16px;
+    text-align: center;
 }

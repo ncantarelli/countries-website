@@ -86,3 +86,12 @@
 .RegistrationBox a:hover {
     color: #34319b;
 }
+
+.RegistrationGoBackArrow {
+    width: 40px;
+    height: 40px;
+    background-color: #E5E4FC;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}

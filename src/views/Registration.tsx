@@ -1,10 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../style/registration-styles.css"
 
 
 function Registration() {
+
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    };
+    
     return (
         <div className="RegistrationBox">
+            <img
+                src="../src/assets/purple-arrow-left.svg"
+                className="RegistrationGoBackArrow"
+                onClick={goBack}
+            />
             <h1>Registration</h1>
             <form>
                 <div>

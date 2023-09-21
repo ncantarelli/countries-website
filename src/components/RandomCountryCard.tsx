@@ -51,7 +51,10 @@ function RandomItemFetcher() {
                         <h4>{randomItem.name.common} {randomItem.flag}</h4>
                         <div>
                             <p>{randomItem.region}</p>
-                            <p>Reviews</p>
+                            {/* <div> */}
+                                <p>Reviews<img src='../src/assets/review-icon.svg' /></p>
+                                {/* <img src='../src/assets/review-icon.svg' /> */}
+                            {/* </div> */}
                         </div>
                     </div>
                 </Link>

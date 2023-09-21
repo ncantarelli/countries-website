@@ -143,7 +143,7 @@ function Countries() {
                                 <h4>{country.name?.common} {country.flag}</h4>
                                 <div className='CountryTags'>
                                     <p>{country.region}</p>
-                                    <p>Reviews</p>
+                                    <p>Reviews<img src='../src/assets/review-icon.svg' /></p>
                                 </div>
                             </div>
                         </Link>
@@ -151,7 +151,7 @@ function Countries() {
                 })}
             </div>
             <div className="scroll-to-top" onClick={scrollToTop}>
-                <img src='../src/assets/back-to-top-button.svg' />
+                <img src='../src/assets/purple-arrow-up.svg' />
                 {/* <button>Back to Top</button> */}
             </div>
         </>

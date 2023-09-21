@@ -1,10 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../style/registration-styles.css"
 
 
 function Login() {
+
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    };
+    
     return (
         <div className="RegistrationBox">
+            <img
+                src="../src/assets/purple-arrow-left.svg"
+                className="RegistrationGoBackArrow"
+                onClick={goBack}
+            />
             <h1>Login</h1>
             <form>
                 <div>
@@ -22,7 +33,7 @@ function Login() {
                 <p>By clicking the “Sign up” button, you are creating an account and therefore you agree to Terms of Use and Privacy Policy.</p>
             </div> */}
             <div>
-                <p className="LoginOption">Not a member?<Link to="/registration">Create an account</Link></p>
+                <p className="LoginOption">Not a member?<Link to="/registration">Create an Account</Link></p>
             </div>
         </div>
     );

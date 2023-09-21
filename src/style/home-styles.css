@@ -99,7 +99,7 @@ h2 {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-color: #e3fbec;
     color: #44915e;
     padding: 7px 16px 7px 16px;
@@ -118,6 +118,8 @@ h2 {
 }
 
 .CountryDisplayBox div div p:last-child {
+    display: flex;
+    gap: 5px;
     font-size: 1rem;
     font-weight: 700;
     color: #646668;
