@@ -2,23 +2,24 @@ import { useEffect, useState } from 'react'
 import { Link, useParams, useNavigate} from 'react-router-dom'
 import "../style/countrydetails-styles.css"
 import ReviewCard from '../components/ReviewCard'
+import { CountryType } from '../types/customTypes';
 
-interface CountryType {
-  name: NameType;
-  capital: [string];
-  flag: string;
-  region: string;
-  languages: {[key: string]: string};
-  currencies: { [key: string]:{name: string , symbol: string}};
-  population: number;
-  maps: { OpenStreetMaps: string };
-};
+// interface CountryType {
+//   name: NameType;
+//   capital: [string];
+//   flag: string;
+//   region: string;
+//   languages: {[key: string]: string};
+//   currencies: { [key: string]:{name: string , symbol: string}};
+//   population: number;
+//   maps: { OpenStreetMaps: string };
+// };
 
 
 
-interface NameType {
-    common: string;
-};
+// interface NameType {
+//     common: string;
+// };
 
 const CountryDetails = () => {
   const [country, setCountry] = useState<CountryType[]>([
@@ -69,6 +70,7 @@ const CountryDetails = () => {
 
     <div className='DetailsBody'>
       <img src='../src/assets/arrow-left.svg' className='GoBackArrow' onClick={goBack} />
+      <div className='FavoritesIcon'><img src='../src/assets/favorite-icon.svg' /></div>
       <img className="HeaderImage" src='../src/assets/afghanistan.png' />
       <div className='DetailsHeader'>
         <h1>

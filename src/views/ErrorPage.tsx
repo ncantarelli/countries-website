@@ -1,14 +1,15 @@
 import { useRouteError } from 'react-router-dom'
 import MyNavbar from '../components/MyNavbar';
+import { RouteErrorType } from '../types/customTypes';
 
-interface RouteErrorType {
-    data: string;
-    error: {
-        message: string;
-    };
-    status: number;
-    statusText: string;
-}
+// interface RouteErrorType {
+//     data: string;
+//     error: {
+//         message: string;
+//     };
+//     status: number;
+//     statusText: string;
+// }
 
 function ErrorPage() {
     const error = useRouteError() as RouteErrorType;

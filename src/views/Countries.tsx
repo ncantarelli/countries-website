@@ -2,32 +2,35 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import FilterBox from '../components/FilterBox';
 import { Link } from 'react-router-dom';
+import { CountryType } from '../types/customTypes';
 
 
 
-interface CountryType {
-    name: NameType;
-    flag: string;
-    region: string;
-    languages: {[key: string]: string};
-    currencies: { [key: string]:{name: string , symbol: string}};
-    maps: { OpenStreetMaps: string};
-};
+// interface CountryType {
+//     name: NameType;
+//     flag: string;
+//     region: string;
+//     languages: {[key: string]: string};
+//     currencies: { [key: string]:{name: string , symbol: string}};
+//     maps: { OpenStreetMaps: string};
+// };
 
-interface NameType {
-    common: string;
-};
+// interface NameType {
+//     common: string;
+// };
 
 function Countries() {
     // console.log("Component Rendered");
 
     const [countries, setCountries] = useState<CountryType[]>([
         {
-            name: {common:""},
+            name: { common: "" },
+            capital: [""],
             flag: "",
             region: "",
             languages: {},
             currencies: {},
+            population: 0,
             maps: {OpenStreetMaps:""},
         }
     ]);
