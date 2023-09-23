@@ -1,3 +1,7 @@
+h2 {
+    margin-bottom: 16px;
+}
+
 .DetailsBody {
     display: flex;
     flex-direction: column;

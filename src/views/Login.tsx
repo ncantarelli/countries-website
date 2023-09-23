@@ -1,5 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../style/registration-styles.css"
+// import { useContext } from "react";
+// import { AuthContext } from "../context/AuthContext";
 
 
 function Login() {
@@ -8,7 +10,7 @@ function Login() {
     const goBack = () => {
         navigate(-1);
     };
-    
+
     return (
         <div className="RegistrationBox">
             <img

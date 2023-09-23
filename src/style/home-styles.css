@@ -147,3 +147,7 @@ h2 {
     background: rgba(137, 137, 137, 0.4);
     cursor: pointer;
 }
+
+.ReviewsHolder {
+    margin: 0 20px 30px 20px;
+}

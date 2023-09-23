@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import "../style/home-styles.css"
 import RandomItemFetcher from '../components/RandomCountryCard';
+import ReviewCard from '../components/ReviewCard';
 
 function Home() {
 
@@ -19,9 +20,10 @@ function Home() {
             <div className='CountryDisplayBox'>
                 <RandomItemFetcher/>
             </div>
+            <div><h2>Latest Reviews</h2></div>
             <div className='ReviewsHolder'>
                 <div className='ReviewsCard'>
-                    <h2>Last reviews</h2>
+                    <ReviewCard/>
                 </div>
             </div>
         </div>

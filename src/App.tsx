@@ -11,7 +11,9 @@ import Footer from "./components/Footer";
 import MyNavbar from "./components/MyNavbar";
 import UserPage from "./views/UserPage";
 import Favorites from "./views/Favorites";
-import { CountriesContextProvider } from "./context/CountriesContext";
+import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+// import { CountriesContextProvider } from "./context/CountriesContext";
 
 function App() {  
 
@@ -25,17 +27,23 @@ function App() {
         <Route path="registration" element={<Registration />} />
         <Route path="login" element={<Login />} />
         <Route path="country/:name" element={<CountryDetails />} />
-        <Route path="userpage" element={<UserPage />} />
-        <Route path="userpage/favorites" element={<Favorites />} />
+        <Route path="userpage" element={
+          <ProtectedRoute>
+            <UserPage />
+          </ProtectedRoute>
+          } />
+          <Route path="userpage/favorites" element={<Favorites />} />
       </Route>
     )
   );
 
   return (
     <>
-      <CountriesContextProvider>
-      <RouterProvider router={router} />   
-      </CountriesContextProvider>
+      <AuthContextProvider>
+        {/* <CountriesContextProvider> */}
+        <RouterProvider router={router} />
+        {/* </CountriesContextProvider> */}
+      </AuthContextProvider>
     </>
   );
 };
