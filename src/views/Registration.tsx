@@ -7,19 +7,19 @@ import { AuthContext } from "../context/AuthContext";
 function Registration() {
     const {register} = useContext(AuthContext);
     const navigate = useNavigate();
-    
+
     const goBack = () => {
         navigate(-1);
     };
     
-    const [name, setName] = useState("")
+    // const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleNameChange = (e:ChangeEvent<HTMLInputElement>) => { 
-        setName(e.target.value);
-        console.log('name :>> ', name);
-    };
+    // const handleNameChange = (e:ChangeEvent<HTMLInputElement>) => { 
+    //     setName(e.target.value);
+    //     console.log('name :>> ', name);
+    // };
     const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
         console.log('email :>> ', email);
@@ -29,9 +29,10 @@ function Registration() {
         console.log('password :>> ', password);
     };
     
-    const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+    const handleRegister = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('name, email, password :>> ', name, email, password);
+        // console.log('name, email, password :>> ', name, email, password);
+        register(email, password);
     }
 
     return (
@@ -42,11 +43,11 @@ function Registration() {
                 onClick={goBack}
             />
             <h1>Registration</h1>
-            <form onSubmit={handleLogin}>
-                <div>
+            <form onSubmit={handleRegister}>
+                {/* <div>
                     <label>Name</label>
                     <input type="text" placeholder="Your Name" onChange={handleNameChange}></input>
-                </div>
+                </div> */}
                 <div>
                     <label>Email</label>
                     <input type="email" placeholder="Your Email" onChange={handleEmailChange}></input>

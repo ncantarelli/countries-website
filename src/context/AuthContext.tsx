@@ -1,11 +1,16 @@
 import { ReactNode, createContext, useState } from "react";
 import { User } from "../types/customTypes";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../config/firebaseConfig";
+
+type UserCredentialsType = (a: string, b: string) => void;
 
 interface AuthContextType {
     user: User | null;
     setUser: (user: User) => void;
     logout: () => void;
-    register: (name: string, email: string, password: string) => void;
+    register: UserCredentialsType;
+    login: UserCredentialsType;
 };
 
 interface AuthContextProviderProps {
@@ -18,6 +23,7 @@ const AuthInitContext = {
     setUser: ()=> console.log("context not initialized"),
     logout: () => console.log("context not initialized"),
     register: () => console.log("context not initialized"),
+    login: () => console.log("context not initialized"),
 };
 
 // 1. Create context
@@ -32,18 +38,45 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
 
     const [user, setUser] = useState<User | null>(null);
     
-    const register = (name:string, email:string, password:string) => {
-      
-    }
+    const register = async (email: string, password: string) => {
+        // console.log('name, email, password :>> ', name, email, password);
+        try {
+            const userCredential = await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+            const registeredUser = userCredential.user;
+            console.log('registered user :>> ', registeredUser); 
+        } catch (error) {
+            const errorCode = "";
+            const errorMessage = "";
+            console.log('registration failed :>> ', error);
+            // .. 
+        };
+        
+    };
 
-
+    const login: UserCredentialsType = (email, password) => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log('user :>> ', user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log('error :>> ', error);
+            });
+    };
 
     const logout = () => {
         setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{user, setUser, logout, register}}>
+        <AuthContext.Provider value={{user, setUser, logout, register, login}}>
             {children}
         </AuthContext.Provider>
     );
