@@ -17,12 +17,12 @@ function Modal({ isOpen, onClose }: ModalProps) {
     const { user, setUser, logout } = useContext(AuthContext);
     console.log('user :>> ', user);
     
-    const login = () => {
-        setUser({
-            userName: "Nico",
-            email: "nico@email.com"
-        });
-    };
+    // const login = () => {
+    //     setUser({
+    //         // userName: "Nico",
+    //         // email: "nico@email.com"
+    //     });
+    // };
 
     const allowAccess = useIsAuth();
 
@@ -33,7 +33,7 @@ function Modal({ isOpen, onClose }: ModalProps) {
             </button>
             <div className="modal-content">
                 <div className="NavItems">
-                    {allowAccess ? (<p>Hello {user?.userName}!</p>) : null}
+                    {allowAccess ? (<p>You are logged in!</p>) : null}
                     <hr></hr>
                     <NavLink to="/" onClick={onClose}>
                         Home
@@ -50,7 +50,7 @@ function Modal({ isOpen, onClose }: ModalProps) {
                     {allowAccess ? (<NavLink to="/" onClick={logout}>
                         Logout
                     </NavLink>)
-                        : (<NavLink to="/login" onClick={login}>
+                        : (<NavLink to="/login" onClick={onClose}>
                             Log In
                         </NavLink>)}
                     

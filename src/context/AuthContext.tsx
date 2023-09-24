@@ -1,6 +1,6 @@
-import { ReactNode, createContext, useState } from "react";
-import { User } from "../types/customTypes";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { ReactNode, createContext, useEffect, useState } from "react";
+// import { User } from "../types/customTypes";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from "firebase/auth";
 import { auth } from "../config/firebaseConfig";
 
 type UserCredentialsType = (a: string, b: string) => void;
@@ -61,8 +61,9 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                console.log('user :>> ', user);
+                const loggedUser = userCredential.user;
+                console.log('loggedUser :>> ', loggedUser);
+                setUser(loggedUser);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -71,8 +72,36 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
             });
     };
 
+    const CheckIfUserActive = () => {
+        onAuthStateChanged(auth, (activeUser) => {
+            if (activeUser) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/auth.user
+                const uid = activeUser.uid;
+                console.log("user is logged in");
+                console.log('uid :>> ', uid);
+                console.log('user :>> ', user);
+                setUser(activeUser);
+            } else {
+                console.log("user is logged out");
+                setUser(null);
+            };
+        });
+    };
+
+    useEffect(() => {
+        CheckIfUserActive();
+    }, []);
+    
     const logout = () => {
-        setUser(null);
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            setUser(null);
+        }).catch((error) => {
+            // An error happened.
+            console.log('error :>> ', error);
+        });
+        
     };
 
     return (

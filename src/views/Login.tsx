@@ -35,6 +35,7 @@ function Login() {
         e.preventDefault();
         // console.log('name, email, password :>> ', name, email, password);
         login(email, password);
+        if (email && password) { navigate("/UserPage") };
     }
 
     return (

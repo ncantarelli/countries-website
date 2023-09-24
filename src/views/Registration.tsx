@@ -33,6 +33,7 @@ function Registration() {
         e.preventDefault();
         // console.log('name, email, password :>> ', name, email, password);
         register(email, password);
+        if (email && password) { navigate("/UserPage") };
     }
 
     return (
