@@ -10,7 +10,7 @@ interface ProtectedRouteProps {
 
 function ProtectedRoute({children}: ProtectedRouteProps) {
     // This bouncer will check you and  let you in... or not.
-    const { user } = useContext(AuthContext);
+    const { } = useContext(AuthContext);
 
     const allowAccess = useIsAuth();
 

@@ -5,6 +5,7 @@ interface AuthContextType {
     user: User | null;
     setUser: (user: User) => void;
     logout: () => void;
+    register: (name: string, email: string, password: string) => void;
 };
 
 interface AuthContextProviderProps {
@@ -14,8 +15,9 @@ interface AuthContextProviderProps {
 
 const AuthInitContext = {
     user: null,
-    setUser: ()=>console.log("context not initialized"),
-    logout: ()=>console.log("context not initialized"),
+    setUser: ()=> console.log("context not initialized"),
+    logout: () => console.log("context not initialized"),
+    register: () => console.log("context not initialized"),
 };
 
 // 1. Create context
@@ -30,12 +32,18 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
 
     const [user, setUser] = useState<User | null>(null);
     
+    const register = (name:string, email:string, password:string) => {
+      
+    }
+
+
+
     const logout = () => {
         setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{user, setUser, logout}}>
+        <AuthContext.Provider value={{user, setUser, logout, register}}>
             {children}
         </AuthContext.Provider>
     );

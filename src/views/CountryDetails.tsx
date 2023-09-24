@@ -62,7 +62,7 @@ const CountryDetails = () => {
     };
   };
 
-  const { user } = useContext(AuthContext);
+  const { } = useContext(AuthContext);
 
   const allowAccess = useIsAuth();
 

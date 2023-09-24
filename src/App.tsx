@@ -10,12 +10,13 @@ import CountryDetails from "./views/CountryDetails";
 import Footer from "./components/Footer";
 import MyNavbar from "./components/MyNavbar";
 import UserPage from "./views/UserPage";
-import Favorites from "./views/Favorites";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { app } from "./config/firebaseConfig";
 // import { CountriesContextProvider } from "./context/CountriesContext";
 
 function App() {  
+  console.log('app :>> ', app);
 
   const router = createBrowserRouter(
 
@@ -32,10 +33,6 @@ function App() {
             <UserPage />
           </ProtectedRoute>
           } />
-        <Route path="userpage/favorites" element={
-          <ProtectedRoute>
-            <Favorites />
-          </ProtectedRoute>} />
       </Route>
     )
   );
