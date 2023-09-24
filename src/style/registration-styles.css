@@ -30,6 +30,16 @@
     margin-bottom: 36px;
 }
 
+form p {
+    text-align: right;
+    color: #646668;
+    margin: -10px 1px 20px 0px;
+}
+
+form a {
+    font-weight: 700;
+}
+
 .RegistrationBox form button {
     display: flex;
     width: 90vw;
@@ -95,3 +105,4 @@
     margin-top: 20px;
     cursor: pointer;
 }
+

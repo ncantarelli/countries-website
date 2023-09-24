@@ -28,6 +28,7 @@ function Login() {
                     <label>Password</label>
                     <input type="password" placeholder="Your Password"></input>
                 </div>
+                <p>Did you forget your password? <Link to="/">Reset it</Link></p>
                 <button type="submit">Login</button>
 
             </form>
@@ -36,6 +37,7 @@ function Login() {
             </div> */}
             <div>
                 <p className="LoginOption">Not a member?<Link to="/registration">Create an Account</Link></p>
+               
             </div>
         </div>
     );

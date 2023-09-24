@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { useIsAuth } from '../hooks/useIsAuth';
 
 interface ModalProps {
   isOpen: boolean;
@@ -23,6 +24,8 @@ function Modal({ isOpen, onClose }: ModalProps) {
         });
     };
 
+    const allowAccess = useIsAuth();
+
     return (
         <div className="modal">
             <button className="CloseButton" onClick={onClose}>
@@ -30,7 +33,7 @@ function Modal({ isOpen, onClose }: ModalProps) {
             </button>
             <div className="modal-content">
                 <div className="NavItems">
-                    {user ? (<p>Hello {user?.userName}!</p>) : null}
+                    {allowAccess ? (<p>Hello {user?.userName}!</p>) : null}
                     <hr></hr>
                     <NavLink to="/" onClick={onClose}>
                         Home
@@ -44,14 +47,14 @@ function Modal({ isOpen, onClose }: ModalProps) {
                 </div>
                 <hr></hr>
                 <div className="UserAreaLinks">
-                    {user ? (<NavLink to="/" onClick={logout}>
+                    {allowAccess ? (<NavLink to="/" onClick={logout}>
                         Logout
                     </NavLink>)
                         : (<NavLink to="/login" onClick={login}>
                             Log In
                         </NavLink>)}
                     
-                    {user ? (<NavLink to="/userpage" onClick={onClose}>
+                    {allowAccess ? (<NavLink to="/userpage" onClick={onClose}>
                             Account
                     </NavLink>)
                         : <NavLink to="/registration" onClick={onClose}>

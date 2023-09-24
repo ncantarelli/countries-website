@@ -513,3 +513,31 @@ input::placeholder {
 .TravelDetails span {
     font-weight: 400;
 }
+
+.WarningMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 90px 20px 0px 20px;
+    min-height: 80vh;
+}
+
+.WarningMessage a {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #534eee;
+}
+
+.ReviewsAccessDenied {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    font-size: 1rem;
+    text-align: center;
+    /* background-color: #534eee; */
+    border-radius: 30px;
+    /* color: #FFFFFF; */
+}

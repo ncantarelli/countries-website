@@ -19,6 +19,10 @@ function Registration() {
             <h1>Registration</h1>
             <form>
                 <div>
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name"></input>
+                </div>
+                <div>
                     <label>Email</label>
                     <input type="email" placeholder="Your Email"></input>
                 </div>

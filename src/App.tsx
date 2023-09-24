@@ -32,7 +32,10 @@ function App() {
             <UserPage />
           </ProtectedRoute>
           } />
-          <Route path="userpage/favorites" element={<Favorites />} />
+        <Route path="userpage/favorites" element={
+          <ProtectedRoute>
+            <Favorites />
+          </ProtectedRoute>} />
       </Route>
     )
   );

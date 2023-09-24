@@ -35,7 +35,7 @@ h2 {
     text-decoration: none;
     font-weight: 700;
     color: #544EEE;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .CountryDisplayTitle a:hover {
@@ -47,7 +47,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    max-width: 89vw;
+    /* max-width: 89vw; */
     margin: 20px 5vw 0 5vw;
     border-radius: 30px;
     /* padding: 0px 16px 40px 16px; */
@@ -59,7 +59,7 @@ h2 {
     /* width: 42vh; */
     border-radius: 30px 30px 0 0;
     /* vertical-align: middle; */
-    margin: 0 -15px 0 -15px;
+    margin: 0 -16px 0 -16px;
     /* align-self: stretch; */
 }
 
@@ -148,6 +148,6 @@ h2 {
     cursor: pointer;
 }
 
-.ReviewsHolder {
+/* .ReviewsHolder {
     margin: 0 20px 30px 20px;
-}
+} */

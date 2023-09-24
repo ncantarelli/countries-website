@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useParams, useNavigate} from 'react-router-dom'
 import "../style/countrydetails-styles.css"
 import ReviewCard from '../components/ReviewCard'
 import { CountryType } from '../types/customTypes';
+import { AuthContext } from '../context/AuthContext';
+import { useIsAuth } from '../hooks/useIsAuth';
 
 // interface CountryType {
 //   name: NameType;
@@ -60,6 +62,10 @@ const CountryDetails = () => {
     };
   };
 
+  const { user } = useContext(AuthContext);
+
+  const allowAccess = useIsAuth();
+
   const simplifiedCountry = country;
 
   useEffect(() => {
@@ -79,8 +85,8 @@ const CountryDetails = () => {
               <div key={country.name.common}>
                 <span>{country.name.common} </span>
                 <span>{country.flag}</span></div>
-          );
-        })}
+            );
+          })}
         </h1>
         <p>Asia</p>
       </div>
@@ -122,15 +128,24 @@ const CountryDetails = () => {
       </iframe>
       
       <div className='ReviewsHolder'>
-        <Link to="/login" className='LoginLink'>
+        {allowAccess ? (<Link to="/" className='LoginLink'>
+          <div>
+            <img src='../src/assets/write-button.svg' />
+            <p>Share Your Experience</p>
+          </div>
+        </Link>) : (<Link to="/login" className='LoginLink'>
           <div>
             <img src='../src/assets/log-in-icon.svg' />
             <p>Log In to Share Your Experience</p>
           </div>
-        </Link>
+        </Link>)
+        }
         <h2>Reviews</h2>
         <div className='ReviewsCard'>
-          <ReviewCard />
+          {allowAccess ? <ReviewCard /> :
+            <div className='ReviewsAccessDenied'>
+              <h3>Please, sign in or register to read the reviews.</h3>
+            </div>}
         </div>
       </div>
     </div>
