@@ -4,23 +4,7 @@ import FilterBox from '../components/FilterBox';
 import { Link } from 'react-router-dom';
 import { CountryType } from '../types/customTypes';
 
-
-
-// interface CountryType {
-//     name: NameType;
-//     flag: string;
-//     region: string;
-//     languages: {[key: string]: string};
-//     currencies: { [key: string]:{name: string , symbol: string}};
-//     maps: { OpenStreetMaps: string};
-// };
-
-// interface NameType {
-//     common: string;
-// };
-
 function Countries() {
-    // console.log("Component Rendered");
 
     const [countries, setCountries] = useState<CountryType[]>([
         {
@@ -67,7 +51,6 @@ function Countries() {
 
     const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 
-        // console.log('event.target.value :>> ', event.target.value);
         const text = event.target.value;
         setInputText(text);
     };
@@ -87,8 +70,6 @@ function Countries() {
 
         return normalizedCountryName.includes(normalizedInputText);
     }); //! Function that receives the countries and input from search bar and brings them both down to lowercase to compare and do the search
-
-    // console.log('filteredCountries :>> ', filteredCountries);
 
     const toggleFilterBox = () => {
         setIsFilterBoxOpen(!isFilterBoxOpen);
@@ -155,7 +136,6 @@ function Countries() {
             </div>
             <div className="scroll-to-top" onClick={scrollToTop}>
                 <img src='../src/assets/purple-arrow-up.svg' />
-                {/* <button>Back to Top</button> */}
             </div>
         </>
     );

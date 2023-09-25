@@ -7,23 +7,6 @@ import { AuthContext } from '../context/AuthContext';
 import { useIsAuth } from '../hooks/useIsAuth';
 import ReviewsModal from "../components/ReviewsModal";
 
-// interface CountryType {
-//   name: NameType;
-//   capital: [string];
-//   flag: string;
-//   region: string;
-//   languages: {[key: string]: string};
-//   currencies: { [key: string]:{name: string , symbol: string}};
-//   population: number;
-//   maps: { OpenStreetMaps: string };
-// };
-
-
-
-// interface NameType {
-//     common: string;
-// };
-
 const CountryDetails = () => {
   const [country, setCountry] = useState<CountryType[]>([
     {
@@ -39,6 +22,8 @@ const CountryDetails = () => {
   ]);
   const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
 
+  const [countryImage, setCountryImage] = useState<string>("");
+
   const { name } = useParams();
 
   const navigate = useNavigate();
@@ -50,10 +35,7 @@ const CountryDetails = () => {
     try {
       const response = await fetch(`https://restcountries.com/v3.1/name/${name}`)
       const result = await response.json();
-      // console.log('result :>> ', result);
       if (Array.isArray(result)) {
-        // const singleCountry = result as CountryType[];
-        // setCountry(singleCountry)
         const independentCountry = result.filter((country) => country.independent === true) as CountryType[];
         setCountry(independentCountry);
       } else {
@@ -82,12 +64,21 @@ const CountryDetails = () => {
     fetchSingleCountry()
   }, []);
 
+  useEffect(() => {
+    if (country.length > 0) {
+      const countryName = country[0].name?.common;
+      const imageSource = `../src/assets/country-headers/${countryName}.png`;
+      setCountryImage(imageSource);
+    }
+  }, [country])
+  
+
   return (
 
     <div className='DetailsBody'>
       <img src='../src/assets/arrow-left.svg' className='GoBackArrow' onClick={goBack} />
       <div className='FavoritesIcon'><img src='../src/assets/favorite-icon.svg' /></div>
-      <img className="HeaderImage" src='../src/assets/afghanistan.png' />
+      <img className="HeaderImage" src={countryImage} alt={country[0].name?.common} />
       <div className='DetailsHeader'>
         <h1>
           {simplifiedCountry && simplifiedCountry.map((country) => {

@@ -1,6 +1,5 @@
 import { ReactNode, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-// import { isUserAuth } from "../utilities/isUserAuth.js";
 import { Link } from "react-router-dom";
 import { useIsAuth } from "../hooks/useIsAuth.js";
 

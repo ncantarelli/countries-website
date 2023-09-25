@@ -17,13 +17,6 @@ function Modal({ isOpen, onClose }: ModalProps) {
     const { user, setUser, logout } = useContext(AuthContext);
     console.log('user :>> ', user);
     
-    // const login = () => {
-    //     setUser({
-    //         // userName: "Nico",
-    //         // email: "nico@email.com"
-    //     });
-    // };
-
     const allowAccess = useIsAuth();
 
     return (

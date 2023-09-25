@@ -16,9 +16,7 @@ h2 {
 
 .CountryExplanation {
     margin: 0 5vw 20px 5vw;
-    /* font-size: 14px; */
     font-weight: 400;
-    /* line-height: 140%; */
     color: #646668;
 }
 
@@ -125,7 +123,6 @@ h2 {
 }
 
 .ReviewsHolder {
-    /* margin-top: 20px; */
     background-color: #F6F6F6;
 }
 
@@ -142,10 +139,8 @@ h2 {
     position: absolute;
     top: 95px;
     right: 5vw;
-    /* z-index: 2; */
     width: 40px;
     height: 40px;
-    /* flex-shrink: 0; */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.40);
     background: rgba(137, 137, 137, 0.4);

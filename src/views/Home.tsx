@@ -8,7 +8,8 @@ function Home() {
     return (
         <div>
             <div className='HeroImage'>
-                <h1>Don't listen to what they say, go see it</h1>
+                {/* <h1>Don't listen to what they say, go see it</h1> */}
+                <h1>Explore the unseen, rewrite your story</h1>
             </div>
             <div className='CountryDisplayTitle'>
                 <h2>Countries</h2>

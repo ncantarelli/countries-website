@@ -13,7 +13,6 @@ import UserPage from "./views/UserPage";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { app } from "./config/firebaseConfig";
-// import { CountriesContextProvider } from "./context/CountriesContext";
 
 function App() {  
   console.log('app :>> ', app);
@@ -40,9 +39,7 @@ function App() {
   return (
     <>
       <AuthContextProvider>
-        {/* <CountriesContextProvider> */}
         <RouterProvider router={router} />
-        {/* </CountriesContextProvider> */}
       </AuthContextProvider>
     </>
   );

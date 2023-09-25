@@ -1,15 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
+
+
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    border: 0;
+    font-family: 'Roboto Flex', sans-serif;
+  border: 0; 
     margin: 0;
 }
-
-/* #root {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* text-align: center; */
-/* } */
 
 body {
     font-size: 1vw; /* Sets the font size for the whole page to 17px. This will be used as reference for REM and EM units*/
@@ -44,10 +40,6 @@ nav a {
     color: #544EEE;
 }
 
-/* nav a:hover {
-    color: #34319b;
-} */
-
 .BurgerIcon {
     cursor: pointer;
 }
@@ -55,17 +47,13 @@ nav a {
 .UserAreaLinks {
     display: flex;
     flex-direction: row;
-    /* gap: 4px; */
     gap: 1vw; /*! This is around 4px */
 }
 
 .UserAreaLinks a:first-child {
     text-align: center;
     color: #544EEE;
-    /* background-color: #E5E4FC; */
     border-radius: 0.625rem;
-    /* padding: 7px 10px 7px 10px; */
-    /* padding: 1vh 2.5vw 1vh 2.5vw; */
     padding: 0.85vh 2.55vw 0.85vh 2.55vw;
 }
 
@@ -77,9 +65,7 @@ nav a {
     text-align: center;
     color: #FFFFFF;
     background-color: #544EEE;
-    /* padding: 7px 10px 7px 10px; */
     padding: 0.85vh 2.55vw 0.85vh 2.55vw;
-    /* padding: 1vh 2.5vw 1vh 2.5vw;  */
     /*! This is around 7px and 10px */
     border-radius: 0.625rem;
 }
@@ -167,8 +153,7 @@ footer div {
 
 .HeaderContainer h1 {
     color: #15141B;
-    /* margin: 3.60vh 0px 20px 0px; */
-    margin: 3.60vh 0 2.3vh 0;
+    margin: 3.60vh 0px 2.3vh 0px;
     font-size: 2.500rem;
 }
 
@@ -178,17 +163,12 @@ footer div {
 
 input {
     cursor: pointer;
-    /* border-radius: 30px; */
-    border-radius: 3.15vh;
-    color: #544EEE;
+    border-radius: 10px;
+    color: #15141B;
     font-weight: 600;
     background-color: #E5E4FC;
     border: 0.25vh solid #544EEE;
-    /* border: 2px solid #544EEE; */
-    /* padding: 7px 16px 7px 16px; */
     padding: 0.85vh 4.1vw 0.85vh 4.1vw; 
-    /* This is around 7px and 10px */
-    /* margin: 10px 20px 20px 20px; */
     margin: 1vh 5vw 2.5vh 5vw;
     font-size: 1rem;
     outline: none;
@@ -198,24 +178,15 @@ input::placeholder {
     color: #9895e5;
 }
 
-/* input:hover {
-    background-color: #c5c5dc;
-    color: #8381c6;
-} */
-
 .FilterBox {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* border-radius: 30px; */
     border-radius: 3.50vh;
-    /* box-shadow: 0 4px 8px 0 #E5E4FC, 0 6px 20px 0 #E5E4FC; */
     box-shadow: 0 0.70vh 1vw 0 #E5E4FC, 0 1vh 3vw 0 #E5E4FC;
     background-color: white;
     height: auto;
-    /* padding: 20px; */
     padding: 2.6vh 5vw 2.6vh 5vw;
-    /* margin: 0px 20px 10px 20px; */
     margin: 0vh 5vw 1.2vh 5vw;
 }
 
@@ -253,10 +224,6 @@ input::placeholder {
     text-align: center;
 }
 
-/* .Selected:hover {
-    background-color: #34319b;
-} */
-
 .Unselected {
     font-size: 1rem;
     font-weight: 700;
@@ -266,10 +233,6 @@ input::placeholder {
     padding: 7px 16px 7px 16px;
     text-align: center;
 }
-
-/* .Unselected:hover {
-    background-color: #c0bfbf;
-} */
 
 .CardContainer {
     display: flex;
@@ -449,14 +412,8 @@ input::placeholder {
     border-radius: 10px;
     color: white;
     font-weight: 700;
-    /* border: none; */
-    /* padding: 10px 10px; */
     cursor: pointer;
 }
-
-/* .scroll-to-top button:hover {
-    background-color: #34319b;
-} */
 
 .scroll-to-top img {
     height: 47px;
@@ -478,7 +435,6 @@ input::placeholder {
     flex-direction: column;
     padding: 20px 20px 40px 20px;
     gap: 20px;
-    /* margin: 0 20px 0 20px; */
 }
 
 .ReviewText {
@@ -537,7 +493,5 @@ input::placeholder {
     padding: 20px 20px 20px 20px;
     font-size: 1rem;
     text-align: center;
-    /* background-color: #534eee; */
     border-radius: 30px;
-    /* color: #FFFFFF; */
 }

@@ -27,27 +27,30 @@ const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose }) => {
   return (
     <div className="reviews-modal">
       <div ref={modalRef}>
-      <form className="reviews-modal-content">
-        <h2>Your experience</h2>
-        <div className='InputElements'>
+        <form className="reviews-modal-content">
+          <button className="CloseButtonReview" onClick={onClose}>
+          <img src="../src/assets/closing-button.svg" alt="Close" />
+        </button>
+          <h2>Your experience</h2>
           <div className='InputElements'>
-            <label>Cities You Visited</label>
-            <input type='text' className='ExperienceInput'></input>
+            <div className='InputElements'>
+              <label>Cities You Visited</label>
+              <input type='text' className='ExperienceInput' placeholder='London, Berlin, Paris'></input>
+            </div>
+            <div className='InputElements'>
+              <label>Date of your Trip</label>
+              <input type='text' className='ExperienceInput' placeholder='Dec 21, 2022 to Jan 3, 2023'></input>
+            </div>
+            <div className='InputElements'>
+              <label>Tell us about your Experience</label>
+              <textarea className='ExperienceBox' placeholder='What did you see in your trip?'></textarea>
+            </div>
           </div>
-          <div className='InputElements'>
-            <label>Date of your Trip</label>
-            <input type='text' className='ExperienceInput'></input>
-          </div>
-          <div className='InputElements'>
-            <label>Tell us about your Experience</label>
-            <textarea className='ExperienceBox'></textarea>
-          </div>
-        </div>
-          <button onClick={onClose}>Publish Review</button>
+          <button className="PublishButtonReview" onClick={onClose}>Publish Review</button>
           <p>By clicking on "Publish review" you agree to make your review public.</p>
         </form>
         
-        </div>
+      </div>
     </div>
   );
 };
