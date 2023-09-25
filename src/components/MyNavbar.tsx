@@ -5,10 +5,10 @@ import Modal from './Modal';
 
 function MyNavbar() {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isNavbarModalOpen, setIsNavbarModalOpen] = useState(false);
 
     const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
+        setIsNavbarModalOpen(!isNavbarModalOpen);
     };
 
     return (
@@ -30,7 +30,7 @@ function MyNavbar() {
                     </NavLink>
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} onClose={toggleModal} />
+            <Modal isOpen={isNavbarModalOpen} onClose={toggleModal} />
         </nav>
     );
 }

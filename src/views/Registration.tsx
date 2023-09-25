@@ -51,11 +51,11 @@ function Registration() {
                 </div> */}
                 <div>
                     <label>Email</label>
-                    <input type="email" placeholder="Your Email" onChange={handleEmailChange}></input>
+                    <input type="email" placeholder="Your Email" onChange={handleEmailChange} required></input>
                 </div>
                 <div>
                     <label>Password</label>
-                    <input type="password" placeholder="Your Password" onChange={handlePasswordChange}></input>
+                    <input type="password" placeholder="Your Password" onChange={handlePasswordChange}required></input>
                 </div>
                 <button type="submit">Register</button>
             </form>

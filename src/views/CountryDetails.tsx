@@ -5,6 +5,7 @@ import ReviewCard from '../components/ReviewCard'
 import { CountryType } from '../types/customTypes';
 import { AuthContext } from '../context/AuthContext';
 import { useIsAuth } from '../hooks/useIsAuth';
+import ReviewsModal from "../components/ReviewsModal";
 
 // interface CountryType {
 //   name: NameType;
@@ -36,6 +37,7 @@ const CountryDetails = () => {
       maps: { OpenStreetMaps: "" },
     }
   ]);
+  const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
 
   const { name } = useParams();
 
@@ -62,6 +64,14 @@ const CountryDetails = () => {
     };
   };
 
+  const openReviewsModal = () => {
+    setIsReviewsModalOpen(true);
+  };
+
+  const closeReviewsModal = () => {
+    setIsReviewsModalOpen(false);
+  };
+  
   const { } = useContext(AuthContext);
 
   const allowAccess = useIsAuth();
@@ -128,7 +138,7 @@ const CountryDetails = () => {
       </iframe>
       
       <div className='ReviewsHolder'>
-        {allowAccess ? (<Link to="/" className='LoginLink'>
+        {allowAccess ? (<Link to="" className='LoginLink' onClick={openReviewsModal}>
           <div>
             <img src='../src/assets/write-button.svg' />
             <p>Share Your Experience</p>
@@ -140,6 +150,7 @@ const CountryDetails = () => {
           </div>
         </Link>)
         }
+        {isReviewsModalOpen && <ReviewsModal onClose={closeReviewsModal} />}
         <h2>Reviews</h2>
         <div className='ReviewsCard'>
           {allowAccess ? <ReviewCard /> :
