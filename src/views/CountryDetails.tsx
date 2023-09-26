@@ -21,7 +21,6 @@ const CountryDetails = () => {
     }
   ]);
   const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
-
   const [countryImage, setCountryImage] = useState<string>("");
 
   const { name } = useParams();

@@ -1,9 +1,9 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 // import { User } from "../types/customTypes";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, User } from "firebase/auth";
 import { auth } from "../config/firebaseConfig";
 
-type UserCredentialsType = (a: string, b: string) => void;
+type UserCredentialsType = (a: string, b: string, c: string) => void;
 
 interface AuthContextType {
     user: User | null;
@@ -38,7 +38,7 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
 
     const [user, setUser] = useState<User | null>(null);
     
-    const register = async (email: string, password: string) => {
+    const register = async (username: string, email: string, password: string) => {
         // console.log('name, email, password :>> ', name, email, password);
         try {
             const userCredential = await createUserWithEmailAndPassword(
@@ -48,6 +48,9 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
             );
             const registeredUser = userCredential.user;
             console.log('registered user :>> ', registeredUser); 
+
+            await updateProfile(registeredUser, { displayName: username, });
+
         } catch (error) {
             const errorCode = "";
             const errorMessage = "";
