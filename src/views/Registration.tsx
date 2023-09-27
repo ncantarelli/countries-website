@@ -12,13 +12,13 @@ function Registration() {
         navigate(-1);
     };
     
-    const [Username, setUsername] = useState("")
+    const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value);
-        console.log('username :>> ', Username);
+        console.log('username :>> ', username);
      };
     const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -31,8 +31,8 @@ function Registration() {
     
     const handleRegister = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        register(Username, email, password);
-        if (email && password) { navigate("/UserPage") };
+        register(username, email, password);
+        if (username && email && password) { navigate("/UserPage") };
     }
 
     return (

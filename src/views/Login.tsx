@@ -11,9 +11,14 @@ function Login() {
         navigate(-1);
     };
     
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    // const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
+    // const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    //     setUsername(e.target.value);
+    //     console.log('username :>> ', handleUsernameChange);
+    //  };
     const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
         console.log('email :>> ', email);
@@ -38,6 +43,10 @@ function Login() {
             />
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
+                {/* <div>
+                    <label>Username</label>
+                    <input type="text" placeholder="Your Username" onChange={handleUsernameChange}></input>
+                </div> */}
                 <div>
                     <label>Email</label>
                     <input type="email" placeholder="Your Email" onChange={handleEmailChange}></input>

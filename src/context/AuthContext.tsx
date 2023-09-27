@@ -3,14 +3,15 @@ import { ReactNode, createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, User } from "firebase/auth";
 import { auth } from "../config/firebaseConfig";
 
-type UserCredentialsType = (a: string, b: string, c: string) => void;
+type RegistrationCredentialsType = (a: string, b: string, c: string) => void;
+type LoginCredentialsType = (a: string, b: string) => void;
 
 interface AuthContextType {
     user: User | null;
     setUser: (user: User) => void;
     logout: () => void;
-    register: UserCredentialsType;
-    login: UserCredentialsType;
+    register: RegistrationCredentialsType;
+    login: LoginCredentialsType;
 };
 
 interface AuthContextProviderProps {
@@ -48,6 +49,7 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
             );
             const registeredUser = userCredential.user;
             console.log('registered user :>> ', registeredUser); 
+            
 
             await updateProfile(registeredUser, { displayName: username, });
 
@@ -60,7 +62,7 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
         
     };
 
-    const login: UserCredentialsType = (email, password) => {
+    const login: LoginCredentialsType = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
