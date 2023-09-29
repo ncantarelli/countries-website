@@ -9,12 +9,12 @@ interface ProtectedRouteProps {
 
 function ProtectedRoute({children}: ProtectedRouteProps) {
     // This bouncer will check you and  let you in... or not.
-    const { } = useContext(AuthContext);
+    const {loading} = useContext(AuthContext);
 
     const allowAccess = useIsAuth();
 
     return <>
-        {allowAccess ? children : <div className="WarningMessage">
+        {loading ? <h1>Loading...</h1> : allowAccess ? children : <div className="WarningMessage">
         <h2><Link to="/registration">Register</Link> or <Link to="/login">login</Link> to access this area</h2>
         </div>}
     </>

@@ -14,7 +14,7 @@ function UserPage() {
         <div><p>Username: <span>{user?.displayName}</span></p></div>
         <div><p>Email: <span>{user?.email}</span></p></div>
         <div><p>Password: <span>******</span></p></div>
-        <p>User since: <span>21.12.2022</span></p>
+        <p>User since: <span>{user?.metadata.creationTime}</span></p>
       </div>
       <div className="Header"><h2>Bucket List</h2><div className="EditButton"><img src="../src/assets/delete-button.svg"/><button>Delete All</button></div></div>
       <div className="DetailsContainer">

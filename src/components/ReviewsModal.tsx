@@ -25,7 +25,7 @@ const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose }) => {
   const submitReview = async () => {
 
       const newReview:ReviewsType = {
-        author: user!.email!,
+        author: user!.displayName!,
         country: countryInput,
         traveldates: travelDatesInput,
         cities: citiesInput,

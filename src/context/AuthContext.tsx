@@ -8,6 +8,7 @@ type LoginCredentialsType = (a: string, b: string) => void;
 
 interface AuthContextType {
     user: User | null;
+    loading: boolean;
     setUser: (user: User) => void;
     logout: () => void;
     register: RegistrationCredentialsType;
@@ -21,6 +22,7 @@ interface AuthContextProviderProps {
 
 const AuthInitContext = {
     user: null,
+    loading: true,
     setUser: ()=> console.log("context not initialized"),
     logout: () => console.log("context not initialized"),
     register: () => console.log("context not initialized"),
@@ -39,6 +41,8 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
 
     const [user, setUser] = useState<User | null>(null);
     
+    const [loading, setLoading] = useState(true);
+
     const register = async (username: string, email: string, password: string) => {
         // console.log('name, email, password :>> ', name, email, password);
         try {
@@ -69,11 +73,13 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
                 const loggedUser = userCredential.user;
                 console.log('loggedUser :>> ', loggedUser);
                 setUser(loggedUser);
+                
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log('error :>> ', error);
+                
             });
     };
 
@@ -87,9 +93,11 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
                 console.log('uid :>> ', uid);
                 console.log('user :>> ', user);
                 setUser(activeUser);
+                setLoading(false);
             } else {
                 console.log("user is logged out");
                 setUser(null);
+                setLoading(false);
             };
         });
     };
@@ -110,7 +118,7 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
     };
 
     return (
-        <AuthContext.Provider value={{user, setUser, logout, register, login}}>
+        <AuthContext.Provider value={{user, setUser, logout, register, login, loading}}>
             {children}
         </AuthContext.Provider>
     );

@@ -1,4 +1,4 @@
-import { Timestamp, collection, getDocs } from "firebase/firestore"; 
+import { Timestamp, collection, getDocs, onSnapshot, query, where } from "firebase/firestore"; 
 import { db } from "../config/firebaseConfig";
 import { useEffect, useState } from "react";
 import { ReviewsType } from "../types/customTypes";
@@ -42,9 +42,19 @@ const ReviewCard = () => {
         
     };
 
+    const getReviewsLiveUpdate = () => {
+        const q = query(collection(db, "reviews"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const messagesArray: ReviewsType[] = [];
+        querySnapshot.forEach((doc) => {
+            messagesArray.push(doc.data() as ReviewsType);
+        });
+        setReviewMessages(messagesArray);
+        });
+    }
     useEffect(() => {
 
-     getReviews();
+    getReviewsLiveUpdate();
 
     }, []);
     
