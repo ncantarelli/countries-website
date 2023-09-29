@@ -435,6 +435,9 @@ input::placeholder {
     flex-direction: column;
     padding: 20px 20px 40px 20px;
     gap: 20px;
+    background-color: #FFFFFF;
+    margin: 0 5vw 20px 5vw;
+    border-radius: 30px;
 }
 
 .ReviewText {

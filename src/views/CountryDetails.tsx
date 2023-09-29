@@ -142,7 +142,7 @@ const CountryDetails = () => {
         }
         {isReviewsModalOpen && <ReviewsModal onClose={closeReviewsModal} />}
         <h2>Reviews</h2>
-        <div className='ReviewsCard'>
+        <div>
           {allowAccess ? <ReviewCard /> :
             <div className='ReviewsAccessDenied'>
               <h3>Please, sign in or register to read the reviews.</h3>

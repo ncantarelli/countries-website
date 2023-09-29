@@ -34,6 +34,10 @@ const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose }) => {
           <h2>Your experience</h2>
           <div className='InputElements'>
             <div className='InputElements'>
+              <label>Country You Visited</label>
+              <input type='text' className='ExperienceInput' placeholder='Germany'></input>
+            </div>
+            <div className='InputElements'>
               <label>Cities You Visited</label>
               <input type='text' className='ExperienceInput' placeholder='London, Berlin, Paris'></input>
             </div>
