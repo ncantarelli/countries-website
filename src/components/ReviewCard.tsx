@@ -1,15 +1,16 @@
 import { Timestamp, collection, getDocs } from "firebase/firestore"; 
 import { db } from "../config/firebaseConfig";
 import { useEffect, useState } from "react";
+import { ReviewsType } from "../types/customTypes";
 
-interface ReviewsType {
-    author: string;
-    text: string;
-    countries: string;
-    cities: string;
-    date: Timestamp;
-    traveldates: string;
-}
+// interface ReviewsType {
+//     author: string;
+//     text: string;
+//     countries: string;
+//     cities: string;
+//     date: Timestamp;
+//     traveldates: string;
+// }
 
 const ReviewCard = () => {
 
@@ -28,10 +29,17 @@ const ReviewCard = () => {
         });
         setReviewMessages(reviewsArray);
     };
+    
+    const formatDate = (date:Timestamp | Date):string => {
 
-    const formatDate = (date:number):string => {
-        const formattedDate = new Date(date * 1000).toLocaleString();
-        return formattedDate;
+        if(date instanceof Timestamp) {
+            const formattedDate = new Date(date.seconds * 1000).toLocaleString();
+            return formattedDate; 
+        } else {
+            const formattedDate = new Date(date).toLocaleString();
+            return formattedDate;
+        };
+        
     };
 
     useEffect(() => {
@@ -43,12 +51,12 @@ const ReviewCard = () => {
 
     return (
         <>
-        {reviewMessages && reviewMessages?.map((review) => {
+        {reviewMessages && reviewMessages?.map((review, index) => {
           return (
-            <div className="ReviewContainer" key={review.date.nanoseconds}>
+            <div className="ReviewContainer" key={index}>
                 <div>
                     <h3>{review.author}</h3>
-                    <p className="ReviewDate">{formatDate(review.date.seconds)}</p>
+                    <p className="ReviewDate">{formatDate(review.date)}</p>
                 </div>  
                 <div className="TravelDetails">
                     <p>Travel Dates: <span>{review.traveldates}</span></p>

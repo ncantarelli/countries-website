@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface CountryType {
     name: NameType;
     capital: [string];
@@ -25,4 +27,13 @@ export interface RouteErrorType {
 export interface User {
     userName: string;
     email: string;
+};
+
+export interface ReviewsType {
+    author: string;
+    text: string;
+    country: string;
+    cities: string;
+    date: Timestamp | Date;
+    traveldates: string;
 };
