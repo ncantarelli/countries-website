@@ -6,6 +6,10 @@ import { CountryType } from '../types/customTypes';
 import { AuthContext } from '../context/AuthContext';
 import { useIsAuth } from '../hooks/useIsAuth';
 import ReviewsModal from "../components/ReviewsModal";
+import { arrayRemove, arrayUnion, doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
+import { auth, db } from '../config/firebaseConfig';
+
+
 
 const CountryDetails = () => {
   const [country, setCountry] = useState<CountryType[]>([
@@ -21,9 +25,14 @@ const CountryDetails = () => {
     }
   ]);
   const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const [countryImage, setCountryImage] = useState<string>("");
 
+  const {user} = useContext(AuthContext);
+
   const { name } = useParams();
+
+  const buttonBackgroundColor = isFavorite ? '#544EEE' : 'initial';
 
   const navigate = useNavigate();
   const goBack = () => {
@@ -53,7 +62,7 @@ const CountryDetails = () => {
     setIsReviewsModalOpen(false);
   };
   
-  const { } = useContext(AuthContext);
+  // const {user} = useContext(AuthContext);
 
   const allowAccess = useIsAuth();
 
@@ -70,13 +79,48 @@ const CountryDetails = () => {
       setCountryImage(imageSource);
     }
   }, [country])
-  
+
+  const toggleFavorite = async () => {
+      if (!user) {
+        return;
+      }
+      const favoritesRef = doc(db, 'favorites', user.uid);
+      if (!isFavorite) {
+        await setDoc(favoritesRef, { countries: arrayUnion(country[0])},{merge: true});
+      } else {
+        await setDoc(favoritesRef, {countries: arrayRemove(country[0])}, {merge: true});
+      }
+      setIsFavorite(!isFavorite);
+    };
+
+  useEffect(() => {
+    
+    const checkFavorite = async () => {
+      if (!user) {
+        return;
+      }
+      const favoritesRef = doc(db, 'favorites', user.uid);;
+      const favoritesSnapshot = await getDoc(favoritesRef);
+
+      if (favoritesSnapshot.exists()) {
+        const favoritesData = favoritesSnapshot.data();
+        setIsFavorite(favoritesData?.countries?.some((c:CountryType) => c.name?.common === country[0].name?.common || false)
+        );
+      }
+    };
+    checkFavorite();
+  },[country, user]);
 
   return (
 
     <div className='DetailsBody'>
       <img src='../src/assets/arrow-left.svg' className='GoBackArrow' onClick={goBack} />
-      <div className='FavoritesIcon'><img src='../src/assets/favorite-icon.svg' /></div>
+      <div 
+      className="FavoritesIcon" 
+      onClick={toggleFavorite}
+      style={{backgroundColor: buttonBackgroundColor}}>
+        <img src='../src/assets/favorite-icon.svg' />
+      </div>
       <img className="HeaderImage" src={countryImage} alt={country[0].name?.common} />
       <div className='DetailsHeader'>
         <h1>

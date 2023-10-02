@@ -31,7 +31,8 @@ a {
 .NavContainer {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* width: calc(100% - 40px); */
+    align-items: center; 
+    /* width: calc(100% - 40px); */
     width: calc(100% - 10.4vw); /*! This is around 40px and adjusted width to account for margin */
 }
 
