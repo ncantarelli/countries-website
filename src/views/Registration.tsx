@@ -45,21 +45,22 @@ function Registration() {
             <h1>Registration</h1>
             <form onSubmit={handleRegister}>
                 <div>
-                    <label>Username</label>
+                    <label>Username<span>*</span></label>
                     <input type="text" placeholder="Your Username" onChange={handleUsernameChange} required></input>
                 </div>
                 <div>
-                    <label>Email</label>
+                    <label>Email<span>*</span></label>
                     <input type="email" placeholder="Your Email" onChange={handleEmailChange} required></input>
                 </div>
                 <div>
-                    <label>Password</label>
+                    <label>Password<span>*</span></label>
                     <input type="password" placeholder="Your Password" onChange={handlePasswordChange}required></input>
                 </div>
                 <button type="submit">Register</button>
             </form>
             <div className="SignupDisclaimer">
                 <p>By clicking the “Sign up” button, you are creating an account and therefore you agree to Terms of Use and Privacy Policy.</p>
+                <p>* All of this items are required in order to sign up.</p>
             </div>
             <div>
                 <p className="LoginOption">Already have an account? <Link to="/login">Log in</Link></p>

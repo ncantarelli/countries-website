@@ -1,3 +1,5 @@
+@media only screen and (max-width: 768px) {
+
 h2 {
     margin-bottom: 16px;
 }
@@ -147,6 +149,479 @@ h2 {
     cursor: pointer;
 }
 
-.FavoritesIconSelected {
-    background-color: #544EEE;
+}
+
+@media only screen and (min-width: 769px) {
+    h2 {
+        margin-bottom: 16px;
+    }
+    
+    .DetailsBody {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        min-height: 90vh;
+        background-color: #FFFFFF;
+    }
+    
+    .DetailsBody a {
+        text-decoration: none;
+    }
+    
+    .CountryExplanation {
+        margin: 0 5vw 20px 5vw;
+        font-weight: 400;
+        color: #646668;
+    }
+    
+    .CountryExplanation p {
+        font-size: 14px;
+        line-height: 140%;
+    }
+    
+    .DetailsHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        margin: 3.60vh 5vw 20px 5vw;
+    }
+    
+    .DetailsHeader h1 {
+        display: flex;
+        text-align: left;
+        gap: 10px;
+        margin-top: 0;
+        font-size: 1.7rem;
+    }
+    
+    .HeaderImage {
+        margin-top: 70px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .GoBackArrow {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        margin: 95px 0px 0 5vw;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(137, 137, 137, 0.4);
+        position: fixed;
+        cursor: pointer;
+        z-index: 998;
+    }
+    
+    .GoBackArrow:hover {
+        background: rgba(91, 91, 91, 0.4);
+    }
+    
+    .DetailsHeader p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #544EEE;
+        background-color: #E5E4FC;
+        border-radius: 10px;
+        padding: 7px 16px 7px 16px;
+        text-align: center;
+    }
+    
+    .CountrySpecifications {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-size: 1rem;
+        margin: 0 0 36px 0;
+    }
+    
+    .CountrySpecifications div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        margin: 0px 5vw 0 5vw;
+    }
+    
+    .CountrySpecifications p {
+        font-size: 14px;
+    }
+    
+    .CountrySpecifications span {
+        color: #646668;
+        font-weight: 400;
+    }
+    
+    .LoginLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 5vw 20px 5vw;
+        padding: 7px 16px;
+        border-radius: 10px;
+        background-color: #544EEE;
+    }
+    
+    .LoginLink:hover {
+        background-color: #34319b;
+    }
+    
+    .LoginLink div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+    
+    .ReviewsHolder {
+        background-color: #F6F6F6;
+    }
+    
+    .ReviewsCard {
+        /* background-color: #FFFFFF; */
+        /* margin: 0 5vw 20px 5vw; */
+        border-radius: 30px;
+    }
+    
+    .FavoritesIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 95px;
+        right: 5vw;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(137, 137, 137, 0.4);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    h2 {
+        margin-bottom: 16px;
+    }
+    
+    .DetailsBody {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        min-height: 90vh;
+        background-color: #FFFFFF;
+    }
+    
+    .DetailsBody a {
+        text-decoration: none;
+    }
+    
+    .CountryExplanation {
+        margin: 0 5vw 20px 5vw;
+        font-weight: 400;
+        color: #646668;
+    }
+    
+    .CountryExplanation p {
+        font-size: 14px;
+        line-height: 140%;
+    }
+    
+    .DetailsHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        margin: 3.60vh 5vw 20px 5vw;
+    }
+    
+    .DetailsHeader h1 {
+        display: flex;
+        text-align: left;
+        gap: 10px;
+        margin-top: 0;
+        font-size: 1.7rem;
+    }
+    
+    .HeaderImage {
+        margin-top: 70px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .GoBackArrow {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        margin: 95px 0px 0 5vw;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(137, 137, 137, 0.4);
+        position: fixed;
+        cursor: pointer;
+        z-index: 998;
+    }
+    
+    .GoBackArrow:hover {
+        background: rgba(91, 91, 91, 0.4);
+    }
+    
+    .DetailsHeader p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #544EEE;
+        background-color: #E5E4FC;
+        border-radius: 10px;
+        padding: 7px 16px 7px 16px;
+        text-align: center;
+    }
+    
+    .CountrySpecifications {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-size: 1rem;
+        margin: 0 0 36px 0;
+    }
+    
+    .CountrySpecifications div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        margin: 0px 5vw 0 5vw;
+    }
+    
+    .CountrySpecifications p {
+        font-size: 14px;
+    }
+    
+    .CountrySpecifications span {
+        color: #646668;
+        font-weight: 400;
+    }
+    
+    .LoginLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 5vw 20px 5vw;
+        padding: 7px 16px;
+        border-radius: 10px;
+        background-color: #544EEE;
+    }
+    
+    .LoginLink:hover {
+        background-color: #34319b;
+    }
+    
+    .LoginLink div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+    
+    .ReviewsHolder {
+        background-color: #F6F6F6;
+    }
+    
+    .ReviewsCard {
+        /* background-color: #FFFFFF; */
+        /* margin: 0 5vw 20px 5vw; */
+        border-radius: 30px;
+    }
+    
+    .FavoritesIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 95px;
+        right: 5vw;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(137, 137, 137, 0.4);
+        cursor: pointer;
+    }
+    
+    }
+    
+    @media only screen and (min-width: 769px) {
+        h2 {
+            margin-bottom: 16px;
+        }
+        
+        .DetailsBody {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            min-height: 90vh;
+            background-color: #FFFFFF;
+        }
+
+        .DetailsBody a {
+            text-decoration: none;
+        }
+        
+        .CountryExplanation {
+            margin: 0 9vw 20px 9vw;
+            font-weight: 400;
+            color: #646668;
+        }
+        
+        .CountryExplanation p {
+            font-size: 14px;
+            line-height: 140%;
+        }
+        
+        .DetailsHeader {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            margin: 3.60vh 9vw 20px 9vw;
+        }
+        
+        .DetailsHeader h1 {
+            display: flex;
+            text-align: left;
+            gap: 10px;
+            margin-top: 0;
+            font-size: 1.7rem;
+        }
+        
+        .HeaderImage {
+            margin-top: 70px;
+            border-radius: 0 0 30px 30px;
+            height: 50vh;
+            margin: 70px 9vw 0 9vw;
+        }
+        
+        .GoBackArrow {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            margin: 95px 0px 0 10vw;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.40);
+            background: rgba(137, 137, 137, 0.4);
+            position: fixed;
+            cursor: pointer;
+            z-index: 998;
+        }
+        
+        .GoBackArrow:hover {
+            background: rgba(91, 91, 91, 0.4);
+        }
+        
+        .DetailsHeader p {
+            font-size: 14px;
+            font-weight: 700;
+            color: #544EEE;
+            background-color: #E5E4FC;
+            border-radius: 10px;
+            padding: 7px 16px 7px 16px;
+            text-align: center;
+        }
+        
+        .CountrySpecifications {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 1rem;
+            margin: 0 4vw 36px 4vw;
+        }
+        
+        .CountrySpecifications div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            margin: 0px 5vw 0 5vw;
+        }
+        
+        .CountrySpecifications p {
+            font-size: 14px;
+        }
+        
+        .CountrySpecifications span {
+            color: #646668;
+            font-weight: 400;
+        }
+        
+        .LoginLink {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 25vw 20px 25vw;
+            padding: 7px 16px;
+            border-radius: 10px;
+            background-color: #544EEE;
+        }
+        
+        .LoginLink:hover {
+            background-color: #34319b;
+        }
+        
+        .LoginLink div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        
+        .ReviewsHolder {
+            background-color: #F6F6F6;
+        }
+
+        .ReviewsHolder h2 {
+            margin: 0 9vw 0 9vw;
+        }
+
+        .ReviewsHolder h3 {
+            margin: 0 9vw 0 9vw;
+        }
+        
+        .ReviewsCard {
+            /* background-color: #FFFFFF; */
+            /* margin: 0 5vw 20px 5vw; */
+            border-radius: 30px;
+        }
+
+        .ReviewCardContainer {
+            display: flex;
+            margin: 10px 9vw 20px 9vw;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .ReviewContainer h3 {
+            margin: 0;
+        }
+
+        .FavoritesIcon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 95px;
+            right: 10vw;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.40);
+            background: rgba(137, 137, 137, 0.4);
+            cursor: pointer;
+        }
 }

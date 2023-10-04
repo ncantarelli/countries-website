@@ -6,8 +6,8 @@ import { CountryType } from '../types/customTypes';
 import { AuthContext } from '../context/AuthContext';
 import { useIsAuth } from '../hooks/useIsAuth';
 import ReviewsModal from "../components/ReviewsModal";
-import { arrayRemove, arrayUnion, doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
-import { auth, db } from '../config/firebaseConfig';
+import { arrayRemove, arrayUnion, doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '../config/firebaseConfig';
 
 
 
@@ -78,7 +78,7 @@ const CountryDetails = () => {
       const imageSource = `../src/assets/country-headers/${countryName}.png`;
       setCountryImage(imageSource);
     }
-  }, [country])
+  }, [country]);
 
   const toggleFavorite = async () => {
       if (!user) {
@@ -98,15 +98,15 @@ const CountryDetails = () => {
     const checkFavorite = async () => {
       if (!user) {
         return;
-      }
-      const favoritesRef = doc(db, 'favorites', user.uid);;
+      };
+      const favoritesRef = doc(db, 'countries', user.uid);
       const favoritesSnapshot = await getDoc(favoritesRef);
 
       if (favoritesSnapshot.exists()) {
         const favoritesData = favoritesSnapshot.data();
         setIsFavorite(favoritesData?.countries?.some((c:CountryType) => c.name?.common === country[0].name?.common || false)
         );
-      }
+      };
     };
     checkFavorite();
   },[country, user]);
@@ -164,12 +164,12 @@ const CountryDetails = () => {
           </div>
         );
       })}
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6779444.483731522!2d67.7034312!3d33.93403835000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16eb6f8ff026d%3A0xf3b5460dbe96da78!2sAfghanistan!5e0!3m2!1sen!2sde!4v1695122170952!5m2!1sen!2sde"
+      {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6779444.483731522!2d67.7034312!3d33.93403835000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16eb6f8ff026d%3A0xf3b5460dbe96da78!2sAfghanistan!5e0!3m2!1sen!2sde!4v1695122170952!5m2!1sen!2sde"
         width="auto"
         height="240px"
         style={{ border: "0" }}
         loading="lazy">
-      </iframe>
+      </iframe> */}
       
       <div className='ReviewsHolder'>
         {allowAccess ? (<Link to="" className='LoginLink' onClick={openReviewsModal}>
@@ -184,10 +184,10 @@ const CountryDetails = () => {
           </div>
         </Link>)
         }
-        {isReviewsModalOpen && <ReviewsModal onClose={closeReviewsModal} />}
+        {isReviewsModalOpen && <ReviewsModal onClose={closeReviewsModal} countryName={simplifiedCountry[0].name?.common}/>}
         <h2>Reviews</h2>
-        <div>
-          {allowAccess ? <ReviewCard /> :
+        <div className='ReviewCardContainer'>
+          {allowAccess ? <ReviewCard countryName={simplifiedCountry[0].name?.common}/> :
             <div className='ReviewsAccessDenied'>
               <h3>Please, sign in or register to read the reviews.</h3>
             </div>}

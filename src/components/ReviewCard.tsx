@@ -1,6 +1,6 @@
-import { Timestamp, collection, getDocs, onSnapshot, query, where } from "firebase/firestore"; 
+import { Timestamp, collection, getDocs, onSnapshot, query} from "firebase/firestore"; 
 import { db } from "../config/firebaseConfig";
-import { useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { ReviewsType } from "../types/customTypes";
 
 // interface ReviewsType {
@@ -12,13 +12,17 @@ import { ReviewsType } from "../types/customTypes";
 //     traveldates: string;
 // }
 
-const ReviewCard = () => {
+interface ReviewsCardProps {
+    countryName: string;
+  }
+
+const ReviewCard: FunctionComponent<ReviewsCardProps> = (countryName) => {
 
     const [reviewMessages, setReviewMessages] = useState<ReviewsType[] | null>(null);
 
     const getReviews = async () => {
 
-        const querySnapshot = await getDocs(collection(db, "reviews"));
+        const querySnapshot = await getDocs(collection(db, `countries/${countryName}/reviews`));
 
         const reviewsArray:ReviewsType[] = [];
 
@@ -43,7 +47,9 @@ const ReviewCard = () => {
     };
 
     const getReviewsLiveUpdate = () => {
-        const q = query(collection(db, "reviews"));
+        const q = query(collection(db, `countries/${countryName.countryName}/reviews`));
+        console.log('countryName :>> ', countryName);
+        console.log('q review :>> ', q);
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const messagesArray: ReviewsType[] = [];
         querySnapshot.forEach((doc) => {

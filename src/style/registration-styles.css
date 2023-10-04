@@ -1,3 +1,5 @@
+@media only screen and (max-width: 768px) {
+
 .RegistrationBox {
     display: flex;
     flex-direction: column;
@@ -104,3 +106,130 @@ form a {
     cursor: pointer;
 }
 
+}
+
+@media only screen and (min-width: 769px) {
+
+    .RegistrationBox {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin: 70px 10vw 0 10vw;
+        min-height: 82vh;
+    }
+    
+    .RegistrationBox h1 {
+        text-align: center;
+        margin: 3.6vh 0 2.3vh 0;
+        font-size: 50px;
+    }
+    
+    .RegistrationBox div {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .RegistrationBox input {
+        margin: 4px 0 16px 0;
+        border-radius: 10px;
+        background-color: white;
+        border: 1px solid #646668;
+        padding: 7px 16px;
+        text-align: left;
+        font-size: 18px;
+        width: 50vw;
+    }
+    
+    .RegistrationBox form {
+        margin-bottom: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .RegistrationBox form label {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    form p {
+        text-align: center;
+        color: #646668;
+        margin: -10px 1px 20px 0px;
+    }
+    
+    form a {
+        font-weight: 700;
+    }
+    
+    .RegistrationBox form button {
+        display: flex;
+        width: 20vw;
+        height: auto;
+        padding: 7px 16px;
+        justify-content: center;
+        align-items: center;
+        background-color: #544EEE;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 20px;
+        /* margin-left: 30vw; */
+    }
+    
+    .RegistrationBox form button:hover {
+        background-color: #34319b;
+    }
+    
+    .RegistrationBox input::placeholder {
+        color: #646668;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .SignupDisclaimer {
+        color: #646668;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        margin-bottom: 36px;
+        margin-top: -10px;
+    }
+    
+    .LoginOption {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        color: black;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .RegistrationBox span {
+        color: #544EEE;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .RegistrationBox a {
+        color: #544EEE;
+    }
+    
+    .RegistrationBox a:hover {
+        color: #34319b;
+    }
+    
+    .RegistrationGoBackArrow {
+        width: 40px;
+        height: 40px;
+        background-color: #E5E4FC;
+        border-radius: 10px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+}

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@media only screen and (max-width: 768px) {
 .HeroImage {
     width: 100vw;
     height: 60vh;
@@ -10,17 +11,15 @@
     justify-content: center;
     align-items: center;
     color: white;
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px; 
+}
+.HeroImage h1 {
+    margin-bottom: 150px;
+    font-family: 'Asap', sans-serif;
 }
 
 h2 {
     margin: 20px 5vw 0 5vw;
-}
-
-.HeroImage h1 {
-    margin-bottom: 150px;
-    font-family: 'Asap', sans-serif;
 }
 
 .CountryDisplayTitle {
@@ -131,4 +130,163 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 0.40);
     background: rgba(137, 137, 137, 0.4);
     cursor: pointer;
+}
+
+.CountryDisplayInfoDesktop {
+    display: none;
+}
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .HeroImage {
+        width: 100vw;
+        height: 90vh;
+        background-image: url(../assets/hero-image.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 10px; 
+    }
+
+    .HeroImage h1 {
+        margin-bottom: 250px;
+        font-family: 'Asap', sans-serif;
+        font-size: 70px;
+        /* margin-left: 9vw; */
+        /* margin-right: 9vw; */
+    }
+    
+    h2 {
+        color: #15141B;
+        font-size: 40px;
+        font-weight: 700;
+        margin: 40px 9vw 0 9vw;
+    }
+    
+    .CountryDisplayTitle {
+        display: flex;
+        margin: 0 9vw 0 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .CountryDisplayTitle a {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 700;
+        color: #544EEE;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    
+    .CountryDisplayTitle a:hover {
+        color: #34319b;
+    }
+    
+    .CountryDisplayBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px 9vw 0 9vw;
+        border-radius: 30px;
+        background-color: white;
+    }
+    
+    .RandomCountryImage {
+        height: 220px;
+        border-radius: 30px 30px 0 0;
+        margin: 0 -16px 0 -16px;
+    }
+    
+    .CountryDisplayInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0px 16px 20px 16px;
+        position: relative;
+    }
+    
+    .CountryDisplayInfo div {
+        display: flex;
+        gap: 8px;
+    }
+    
+    .CountryDescription {
+        display: flex;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+        color: #646668;
+    }
+    
+    .SuggestedTag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        background-color: #e3fbec;
+        color: #44915e;
+        padding: 7px 16px 7px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+    }
+    
+    .CountryDisplayBox div div p:first-child {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #544EEE;
+        background-color: #E5E4FC;
+        border-radius: 10px;
+        padding: 7px 16px 7px 16px;
+        text-align: center;
+    }
+    
+    .CountryDisplayBox div div p:last-child {
+        display: flex;
+        gap: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #646668;
+        background-color: #F6F6F6;
+        border-radius: 10px;
+        padding: 7px 16px 7px 16px;
+        text-align: center;
+    }
+
+    .CountryDisplayBox a {
+        text-decoration: none;
+    }
+
+    .CountryDisplayBox h4 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #15141B;
+    }
+    
+    .FavoritesIconHome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 16px;
+        bottom: 168px;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(137, 137, 137, 0.4);
+        cursor: pointer;
+    }
+    
 }

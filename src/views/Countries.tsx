@@ -3,6 +3,7 @@ import SearchBar from '../components/SearchBar';
 import FilterBox from '../components/FilterBox';
 import { Link } from 'react-router-dom';
 import { CountryType } from '../types/customTypes';
+import { doc, getDoc } from "firebase/firestore";
 
 function Countries() {
 

@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
 
 
+
+
 * {
     font-family: 'Roboto Flex', sans-serif;
   border: 0; 
     margin: 0;
 }
 
+@media only screen and (max-width: 768px) {
+
 body {
     font-size: 1vw; /* Sets the font size for the whole page to 17px. This will be used as reference for REM and EM units*/
     background-color: #F6F6F6;
 }
 
-nav {
+  nav {
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
@@ -22,7 +26,40 @@ nav {
     position: fixed;
     top: 0vh;
     z-index: 999; /* Adds relative positioning */
+}  
+
+.NavItemsDesktop {
+    display: none;
 }
+
+.UserAreaLinksDesktop {
+    display: none;
+}
+
+.LoadingPage {
+    margin-top: 90px;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 78vh;
+}
+
+/* 
+@media only screen and (min-width: 769px) {
+    nav {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 8vh;
+        background-color: #ffffff;
+        width: 100vw;
+        position: fixed;
+        top: 0vh;
+        z-index: 999; 
+    }  
+} */
+
 
 a {
     text-decoration: none;
@@ -498,4 +535,445 @@ input::placeholder {
     font-size: 1rem;
     text-align: center;
     border-radius: 30px;
+}
+
+.WhiteTravelLogo {
+    display: none;
+}
+
+}
+
+@media only screen and (min-width: 769px) {
+
+    body {
+        font-size: 1vw; /* Sets the font size for the whole page to 17px. This will be used as reference for REM and EM units*/
+        background-color: #F6F6F6;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        height: 8vh;
+        background-color: #ffffff;
+        width: 100vw;
+        position: fixed;
+        top: 0vh;
+        z-index: 999; /* Adds relative positioning */
+    }  
+
+    .NavContainer {
+        display: flex;
+        /* justify-content: space-evenly; */
+    }
+    
+    .WhiteTravelLogo {
+        display: none;
+    }
+    
+    .BurgerIcon {
+        display: none;
+    }
+    
+    .LogoContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100vw;
+        /* margin: 0px 0px; */
+    }
+
+    .LogoContainer a {
+        text-decoration: none;
+        color: #534eee;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .LogoContainer a:hover {
+        color: #34319b;
+    }
+
+    .NavItemsDesktop {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-left: 50px;
+    }
+
+    .NavItemsDesktop p {
+        display: none;
+    }
+
+    .NavItemsDesktop hr {
+        display: none;
+    }
+
+    .UserAreaLinksDesktop {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .UserAreaLinksDesktop a:last-child {
+        display: flex;
+        color: #FFFFFF;
+        background-color: #544EEE;
+        padding: 7px 16px;
+        border-radius: 10px;
+        height: 24px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .UserAreaLinksDesktop a:last-child:hover {
+        background-color: #34319b;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 100vw;
+        /* margin-top: 30px; */
+        /* gap: 15px; */
+        gap: 1.8vh; /*! This is 15px */
+        background-color: #E5E4FC;
+        flex-shrink: 0;
+    }
+    
+    footer p:last-child {
+        font-size: 0.5rem;
+    }
+    
+    footer div {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .AboutPage {
+        display: flex;
+        flex-direction: column;
+        margin: 120px 9vw 20px 9vw;
+    }
+    
+    .AboutPage h1 {
+        text-align: left;
+        margin-bottom: 10px;
+        color: #544EEE;
+        font-size: 50px;
+    }
+    
+    .AboutPage h2 {
+        margin: 30px 5vw 10px 0px;
+        font-size: 2rem;
+        color: #000000;
+    }
+    
+    .AboutPage h3 {
+        font-size: 2rem;
+        margin: 30px 0 0 0;
+        color: #544EEE;
+    }
+    
+    .AboutPage p {
+        margin: 5px 0 5px 0;
+        color: #646668;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .AboutPage span {
+        color: #9895e5;
+    }
+    
+    .scroll-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 130px;
+        display: none;
+    }
+    
+    .scroll-to-top button {
+        background-color: #534eee;
+        border-radius: 10px;
+        color: white;
+        font-weight: 700;
+        border: none;
+        padding: 10px 10px;
+        cursor: pointer;
+    }
+    
+    .scroll-to-top img {
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: rgba(137, 137, 137, 0.4);
+        border-radius: 10px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    
+    .scroll-to-top img {
+        height: 47px;
+        width: 47px;
+    }
+
+    .ReviewsCard {
+        display: flex;
+        justify-content: left;
+        margin: 0 9vw 50px 9vw;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .ReviewContainer {
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        padding: 20px 20px 40px 20px;
+        gap: 20px;
+        background-color: #FFFFFF;
+        width: 37.2vw;
+        border-radius: 30px;
+    }
+    
+    .ReviewText {
+        color: #646668;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    
+    .ReviewContainer h3 {
+        font-size: 24px;
+        color: #15141B;
+    }
+    
+    .ReviewDate {
+        font-size: 16px;
+        color: #AAACAE;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    
+    .TravelDetails {
+        display: flex;
+        flex-direction: column;
+    }
+    .TravelDetails p {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 140%;
+    }
+    
+    .TravelDetails span {
+        font-weight: 400;
+        /* font-size: 16px; */
+    }
+    
+    .WarningMessage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 90px 20px 0px 20px;
+        min-height: 80vh;
+    }
+
+    .LoadingPage {
+        margin-top: 120px;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 78vh;
+    }
+    
+    .WarningMessage a {
+        font-size: 40px;
+        margin-bottom: 30px;
+        text-decoration: none;
+        color: #534eee;
+    }
+
+    .TopInfoContainer {
+        display: flex;
+        flex-direction: column;
+        /* width: 100vw; */
+        margin: 0 5vw 0 5vw;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    
+    .TopInfoContainer img {
+        cursor: pointer;
+    }
+    
+    .HeaderContainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 8vh 5vw 0 5vw; /*! This is standard margins for right and left, 20px each. Also 70px for the top margin so that it doesn't get covered by NavBar*/
+        gap: 57vw;
+    }
+    
+    .HeaderContainer h1 {
+        color: #15141B;
+        margin: 3.60vh 0px 2.3vh 0px;
+        font-size: 50px;
+    }
+    
+    .HeaderContainer img {
+        margin-top: 4.3vh;
+    }
+    
+    input {
+        cursor: pointer;
+        border-radius: 10px;
+        color: #15141B;
+        font-weight: 600;
+        background-color: #E5E4FC;
+        border: 0.25vh solid #544EEE;
+        padding: 0.85vh 2vw 0.85vh 2vw; 
+        margin: 1vh 5vw 2.5vh 5vw;
+        font-size: 1rem;
+        outline: none;
+        width: 40vw;
+    }
+    
+    input::placeholder {
+        color: #9895e5;
+    }
+    
+    .FilterBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 3.50vh;
+        box-shadow: 0 0.70vh 1vw 0 #E5E4FC, 0 1vh 3vw 0 #E5E4FC;
+        background-color: white;
+        height: auto;
+        padding: 1vh 3vw 1vh 3vw;
+        margin: 0vh 5vw 1.2vh 5vw;
+        width: 60vw;
+    }
+    
+    .FilterBox h4 {
+        margin: 10px 5vw 1.2vh 3vw;
+        font-size: 20px;
+    }
+    
+    .FilterOptions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+    }
+    
+    .FilterOptions div {
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .FilterOptions div:last-child {
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .Selected {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #FFFFFF;
+        background-color: #544EEE;
+        border-radius: 10px;
+        padding: 7px 16px 7px 16px;
+        text-align: center;
+    }
+
+    .Selected:hover {
+        background-color: #34319b;
+    }
+    
+    .Unselected {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #646668;
+        background-color: #F6F6F6;
+        border-radius: 10px;
+        padding: 7px 16px 7px 16px;
+        text-align: center;
+    }
+
+    .Unselected:hover {
+        background-color: #dedddd;
+    }
+    
+    .CardContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        /* flex-grow: 1; */
+        flex-wrap: wrap;
+        width: 90vw;
+        gap: 10px;
+        min-height: 60vh;
+        /* margin-bottom: 25px; */
+        margin: 0 5vw 25px 5vw;
+    }
+    
+    .CardContainer a {
+        text-decoration: none;
+        /* margin: 0 5vw 0 5vw; */
+    }
+    
+    .CardContainer p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #544EEE;
+        background-color: #E5E4FC;
+        padding: 7px 16px 7px 16px;
+        border-radius: 0.625rem;
+    }
+    
+    .CountryCard {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        height: auto;
+        width: 25vw;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        gap: 1vh;
+        padding: 20px;
+        margin: 0px 0px 0px 0px;
+        
+    }
+
+    .CountryCard h4 {
+        font-size: 24px;
+        color: #15141B;
+    }
+    
+    .CountryTags {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 1vh;
+    }
+    
+    .CountryTags p:last-child {
+        color: #646668;
+        background-color: #F6F6F6;
+    }
 }

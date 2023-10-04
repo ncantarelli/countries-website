@@ -21,7 +21,7 @@ function Home() {
             <div className='CountryDisplayBox'>
                 <RandomItemFetcher/>
             </div>
-            <div><h2>Latest Reviews</h2></div>
+            <h2>Latest Reviews</h2>
             <div className='ReviewsHolder'>
                 <div className='ReviewsCard'>
                     <ReviewCard/>

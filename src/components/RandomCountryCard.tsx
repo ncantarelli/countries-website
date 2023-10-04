@@ -7,6 +7,7 @@ function RandomItemFetcher() {
   const [countryImage, setCountryImage] = useState<string>("");
 
   useEffect(() => {
+
     async function fetchData() {
       try {
           const response = await fetch('https://restcountries.com/v3.1/independent?status=true');

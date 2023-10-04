@@ -1,3 +1,5 @@
+@media only screen and (max-width: 768px) {
+
 .reviews-modal {
     display: flex;
     flex-direction: column;
@@ -101,4 +103,119 @@
     top: 15px;
     left: 10px;
     background-color: transparent;
+}
+}
+@media only screen and (min-width: 769px) {
+
+    .reviews-modal {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.589);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .InputElements {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .reviews-modal-content {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        background: #fff;
+        width: 50vw;
+        min-height: 55vh;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+    
+    
+    
+    .reviews-modal-content h2 {
+        color: #544EEE;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    
+    .reviews-modal-content p {
+        font-size: 12px;
+        font-weight: 400;
+        color: #646668;
+        text-align: justify;
+        margin: 12px 20px 12px 20px;
+    }
+    
+    .reviews-modal-content label {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: left;
+        margin: 0vh 5vw 0vh 5vw;
+    }
+    
+    .PublishButtonReview {
+        background: #544EEE;
+        color: #FFFFFF;
+        border: none;
+        padding: 7px 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        margin: 0 2vh;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .PublishButtonReview:hover {
+        background-color: #34319b;
+    }
+    
+    .ExperienceInput {
+        border-radius: 10px;
+        background-color: #F6F6F6;
+        border: #D2D4D6 1px solid;
+        color: #15141B;
+        padding: 7px 16px;
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+    
+    .ExperienceInput::placeholder {
+        color:#AAACAE;
+    }
+    
+    .reviews-modal-content textarea {
+        height: 100px;
+        border: #D2D4D6 1px solid;
+        background-color: #F6F6F6;
+        font-size: 16px;
+        color: #15141B;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 7px 16px;
+        margin: 12px 5vw 24px 5vw;
+        resize: vertical;
+    }
+    
+    .reviews-modal-content textarea::placeholder {
+        color: #AAACAE;
+    }
+    
+    .CloseButtonReview {
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        background-color: transparent;
+        cursor: pointer;
+    }
 }

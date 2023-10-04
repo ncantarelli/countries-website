@@ -2,16 +2,17 @@ import { FormEvent, FunctionComponent, useContext, useEffect, useRef, useState }
 import '../style/reviews-modal-styles.css';
 import { ReviewsType } from '../types/customTypes';
 import { AuthContext } from '../context/AuthContext';
-import { addDoc, collection, doc, setDoc } from "firebase/firestore"; 
+import { addDoc, collection } from "firebase/firestore"; 
 import { db } from '../config/firebaseConfig';
 
 
 
 interface ReviewsModalProps {
   onClose: () => void;
+  countryName: string;
 }
 
-const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose }) => {
+const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose, countryName }) => {
 
   const {user} = useContext(AuthContext);
 
@@ -32,11 +33,16 @@ const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose }) => {
         text: expTextInput,
         date: new Date(),
       };
-
-      console.log('newReview :>> ', newReview);
-      const docRef = await addDoc(collection(db, "reviews"), newReview);
-      console.log("Document written with ID: ", docRef.id);
-
+      try {
+        const countryCollectionRef = collection(db, `countries/${countryName}/reviews`)
+        await addDoc(countryCollectionRef, newReview);
+      } catch (error) {
+        console.log('error :>> ', error);
+      };
+      // console.log('newReview :>> ', newReview);
+      // const docRef = await addDoc(collection(db, "reviews"), newReview);
+      // console.log("Document written with ID: ", docRef.id);
+      onClose();
   };
 
   const handleForm = (e: FormEvent<HTMLFormElement>) => {
