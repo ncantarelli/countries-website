@@ -34,7 +34,8 @@ const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose, countryNa
         date: new Date(),
       };
       try {
-        const countryCollectionRef = collection(db, `countries/${countryName}/reviews`)
+        // const countryCollectionRef = collection(db, `countries/${countryName}/reviews`)
+        const countryCollectionRef = collection(db, "reviews")
         await addDoc(countryCollectionRef, newReview);
       } catch (error) {
         console.log('error :>> ', error);

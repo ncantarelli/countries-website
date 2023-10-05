@@ -14,9 +14,15 @@ function ProtectedRoute({children}: ProtectedRouteProps) {
     const allowAccess = useIsAuth();
 
     return <>
-        {loading ? <div className="LoadingPage"><h1>Loading...</h1></div> : allowAccess ? children : <div className="WarningMessage">
-        <h2><Link to="/registration">Register</Link> or <Link to="/login">login</Link> to access this area</h2>
-        </div>}
+        {loading ? 
+        <div className="LoadingPage">
+            <h1>Loading...</h1>
+        </div> : allowAccess ? children : 
+        <div className="WarningMessage">
+        <h2>
+        <Link to="/registration">Register</Link> or <Link to="/login">login</Link> to access this area</h2>
+        </div>
+        }
     </>
 };
 

@@ -14,7 +14,7 @@ function Modal({ isOpen, onClose }: ModalProps) {
         return null; // Renders nothing if the modal is closed
     };
  
-    const { user, setUser, logout } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     console.log('user :>> ', user);
     
     const allowAccess = useIsAuth();

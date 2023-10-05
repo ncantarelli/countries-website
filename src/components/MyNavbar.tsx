@@ -7,7 +7,7 @@ import { useIsAuth } from '../hooks/useIsAuth';
 
 function MyNavbar() {
 
-    const { user, setUser, logout } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     console.log('user :>> ', user);
     
     const allowAccess = useIsAuth();
