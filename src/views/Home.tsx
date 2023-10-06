@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import "../style/home-styles.css"
 import RandomItemFetcher from '../components/RandomCountryCard';
-import ReviewCard from '../components/ReviewCard';
+// import ReviewCard from '../components/ReviewCard';
 
 function Home() {
 
@@ -24,7 +24,7 @@ function Home() {
             <h2>Latest Reviews</h2>
             <div className='ReviewsHolder'>
                 <div className='ReviewsCard'>
-                    <ReviewCard/>
+                    {/* <ReviewCard /> */}
                 </div>
             </div>
         </div>

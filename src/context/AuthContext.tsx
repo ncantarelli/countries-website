@@ -58,8 +58,6 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
             await updateProfile(registeredUser, { displayName: username, });
 
         } catch (error) {
-            const errorCode = "";
-            const errorMessage = "";
             console.log('registration failed :>> ', error);
             // .. 
         };
@@ -76,10 +74,7 @@ export const AuthContextProvider = ({children} : AuthContextProviderProps) => {
                 
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log('error :>> ', error);
-                
+                console.log('error :>> ', error); 
             });
     };
 

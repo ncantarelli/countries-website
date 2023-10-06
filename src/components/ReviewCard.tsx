@@ -1,4 +1,4 @@
-import { Timestamp, collection, getDocs, onSnapshot, query} from "firebase/firestore"; 
+import { Timestamp, collection, onSnapshot, query} from "firebase/firestore"; 
 import { db } from "../config/firebaseConfig";
 import { FunctionComponent, useEffect, useState } from "react";
 import { ReviewsType } from "../types/customTypes";
@@ -16,23 +16,23 @@ interface ReviewsCardProps {
   }
 
 const ReviewCard: FunctionComponent<ReviewsCardProps> = (countryName) => {
-    console.log("review card rendered");
+    // console.log("review card rendered");
 
     const [reviewMessages, setReviewMessages] = useState<ReviewsType[] | null>(null);
 
-    const getReviews = async () => {
+    // const getReviews = async () => {
 
-        const querySnapshot = await getDocs(collection(db, `countries/${countryName}/reviews/`));
+    //     const querySnapshot = await getDocs(collection(db, `countries/${countryName}/reviews/`));
 
-        const reviewsArray:ReviewsType[] = [];
+    //     const reviewsArray:ReviewsType[] = [];
 
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-            console.log('doc.data :>> ', doc.data());
-            reviewsArray.push(doc.data() as ReviewsType);
-        });
-        setReviewMessages(reviewsArray);
-    };
+    //     querySnapshot.forEach((doc) => {
+    //         console.log(`${doc.id} => ${doc.data()}`);
+    //         console.log('doc.data :>> ', doc.data());
+    //         reviewsArray.push(doc.data() as ReviewsType);
+    //     });
+    //     setReviewMessages(reviewsArray);
+    // };
     
     const formatDate = (date:Timestamp | Date):string => {
 
@@ -50,11 +50,11 @@ const ReviewCard: FunctionComponent<ReviewsCardProps> = (countryName) => {
         if (countryName.countryName) {
 
         const q = query(collection(db, `countries/${countryName.countryName}/reviews`));
-        console.log('countryName :>> ', countryName);
-        console.log('q review :>> ', q);
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        const messagesArray: ReviewsType[] = [];
-        querySnapshot.forEach((doc) => {
+        // console.log('countryName :>> ', countryName);
+        // console.log('q review :>> ', q);
+        onSnapshot(q, (querySnapshot) => {
+            const messagesArray: ReviewsType[] = [];
+            querySnapshot.forEach((doc) => {
             messagesArray.push(doc.data() as ReviewsType);
         });
         setReviewMessages(messagesArray);
