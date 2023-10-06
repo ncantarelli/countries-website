@@ -12,6 +12,9 @@ import { db } from '../config/firebaseConfig';
 
 
 const CountryDetails = () => {
+
+
+  
   const [country, setCountry] = useState<CountryType[]>([
     {
       name: { common: "" },
@@ -27,7 +30,7 @@ const CountryDetails = () => {
   const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [countryImage, setCountryImage] = useState<string>("");
-
+const [nameCountry, setNameCountry] = useState("")
   const {user} = useContext(AuthContext);
 
   const { name } = useParams();
@@ -46,6 +49,8 @@ const CountryDetails = () => {
       if (Array.isArray(result)) {
         const independentCountry = result.filter((country) => country.independent === true) as CountryType[];
         setCountry(independentCountry);
+        console.log('independentCountry[0].name.common :>> ', independentCountry[0].name.common);
+        setNameCountry(independentCountry[0].name.common)
       } else {
         console.error("Data is not an array.");
       };
@@ -110,6 +115,10 @@ const CountryDetails = () => {
     };
     checkFavorite();
   },[country, user]);
+
+
+  
+  
 
   return (
 
@@ -187,7 +196,7 @@ const CountryDetails = () => {
         {isReviewsModalOpen && <ReviewsModal onClose={closeReviewsModal} countryName={simplifiedCountry[0].name?.common}/>}
         <h2>Reviews</h2>
         <div className='ReviewCardContainer'>
-          {allowAccess ? <ReviewCard countryName={simplifiedCountry[0].name?.common}/> :
+          {allowAccess ? <ReviewCard countryName={nameCountry}/> :
             <div className='ReviewsAccessDenied'>
               <h3>Please, sign in or register to read the reviews.</h3>
             </div>}

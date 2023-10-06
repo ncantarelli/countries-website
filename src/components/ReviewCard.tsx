@@ -16,6 +16,7 @@ interface ReviewsCardProps {
   }
 
 const ReviewCard: FunctionComponent<ReviewsCardProps> = (countryName) => {
+    console.log("review card rendered");
 
     const [reviewMessages, setReviewMessages] = useState<ReviewsType[] | null>(null);
 
@@ -48,7 +49,7 @@ const ReviewCard: FunctionComponent<ReviewsCardProps> = (countryName) => {
     const getReviewsLiveUpdate = () => {
         if (countryName.countryName) {
 
-            const q = query(collection(db, `countries/${countryName.countryName}/reviews`));
+        const q = query(collection(db, `countries/${countryName.countryName}/reviews`));
         console.log('countryName :>> ', countryName);
         console.log('q review :>> ', q);
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -58,14 +59,15 @@ const ReviewCard: FunctionComponent<ReviewsCardProps> = (countryName) => {
         });
         setReviewMessages(messagesArray);
         }); 
+        }else {
+            console.log("no country name");
         }
        
     }
     useEffect(() => {
-
+    // setReviewMessages;
     getReviewsLiveUpdate();
-
-    }, []);
+    }, [countryName]);
 
 // const ReviewCard = () => {
 
