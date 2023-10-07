@@ -15,7 +15,7 @@ function Home() {
                 <h2>Countries</h2>
                 <NavLink to="/countries">
                     <p>All Countries</p>
-                    <img src="/assets/arrow-right.svg" />
+                    <img src="/arrow-right.svg" />
                 </NavLink>
             </div>
             <div className='CountryDisplayBox'>
