@@ -72,7 +72,7 @@ const ReviewsModal: FunctionComponent<ReviewsModalProps> = ({ onClose, countryNa
       <div ref={modalRef}>
         <form className="reviews-modal-content" onSubmit={handleForm}>
           <button className="CloseButtonReview" onClick={onClose}>
-          <img src="../src/assets/closing-button.svg" alt="Close" />
+          <img src="/src/assets/closing-button.svg" alt="Close" />
         </button>
           <h2>Your experience</h2>
           <div className='InputElements'>

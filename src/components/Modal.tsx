@@ -22,7 +22,7 @@ function Modal({ isOpen, onClose }: ModalProps) {
     return (
         <div className="modal">
             <button className="CloseButton" onClick={onClose}>
-                <img src="../src/assets/closing-button.svg" alt="Close" />
+                <img src="/src/assets/closing-button.svg" alt="Close" />
             </button>
             <div className="modal-content">
                 <div className="NavItems">

@@ -126,7 +126,7 @@ function UserPage() {
   return (
     <div className="UserPageContainer">
       <h1>Your Account</h1>
-      <div className="Header"><h2>Details</h2><div className="EditButton"><img src="../src/assets/edit-button.svg"/><button>Edit</button></div></div>
+      <div className="Header"><h2>Details</h2><div className="EditButton"><img src="/src/assets/edit-button.svg"/><button>Edit</button></div></div>
       <div className="DetailsContainer">
         <div><p>Username: <span>{user?.displayName}</span></p></div>
         <div><p>Email: <span>{user?.email}</span></p></div>
@@ -136,7 +136,7 @@ function UserPage() {
       <div className="Header">
         <h2>Bucket List</h2>
         <div className="EditButton">
-          <img src="../src/assets/delete-button.svg"/>
+          <img src="/src/assets/delete-button.svg"/>
           <button onClick={deleteAllFavorites}>Delete All</button>
         </div>
       </div>
@@ -145,7 +145,7 @@ function UserPage() {
             favoriteCountries.map((country, index) => (
               <div className="BucketListItem" key={index}>
                   <h3>{country.name?.common} {country.flag}</h3>
-                  <img className="DeleteFavoriteButton" src="../src/assets/x-square.svg" onClick={() => removeItemFromBucketList(country)}/>
+                  <img className="DeleteFavoriteButton" src="/src/assets/x-square.svg" onClick={() => removeItemFromBucketList(country)}/>
               </div>
             ))
           ) : 

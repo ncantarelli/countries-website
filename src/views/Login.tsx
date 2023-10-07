@@ -37,7 +37,7 @@ function Login() {
     return (
         <div className="RegistrationBox">
             <img
-                src="../src/assets/purple-arrow-left.svg"
+                src="/src/assets/purple-arrow-left.svg"
                 className="RegistrationGoBackArrow"
                 onClick={goBack}
             />

@@ -20,7 +20,7 @@ function RandomItemFetcher() {
           
 
           const countryName = randomItem.name?.common;
-          const imageSource = `../src/assets/country-headers/${countryName}.png`;
+          const imageSource = `/src/assets/country-headers/${countryName}.png`;
           setCountryImage(imageSource);
           setRandomItem(randomItem);
           }; // Selects a random country from the API to display
@@ -47,7 +47,7 @@ function RandomItemFetcher() {
             <div>
               <p>{randomItem.region}</p>
               {/* <div> */}
-              <p>Reviews<img src='../src/assets/review-icon.svg' /></p>
+              <p>Reviews<img src='/src/assets/review-icon.svg' /></p>
               {/* <img src='../src/assets/review-icon.svg' /> */}
               {/* </div> */}
             </div>

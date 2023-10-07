@@ -106,7 +106,7 @@ function Countries() {
                 <div className='HeaderContainer'>
                     <h1>All Countries</h1>
                     <img
-                        src='../src/assets/filter-icon.svg'
+                        src='/src/assets/filter-icon.svg'
                         height={"47px"}
                         width={"47px"}
                         onClick={toggleFilterBox}
@@ -128,7 +128,7 @@ function Countries() {
                                 <h4>{country.name?.common} {country.flag}</h4>
                                 <div className='CountryTags'>
                                     <p>{country.region}</p>
-                                    <p>Reviews<img src='../src/assets/review-icon.svg' /></p>
+                                    <p>Reviews<img src='/src/assets/review-icon.svg' /></p>
                                 </div>
                             </div>
                         </Link>
@@ -136,7 +136,7 @@ function Countries() {
                 })}
             </div>
             <div className="scroll-to-top" onClick={scrollToTop}>
-                <img src='../src/assets/purple-arrow-up.svg' />
+                <img src='/src/assets/purple-arrow-up.svg' />
             </div>
         </>
     );
