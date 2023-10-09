@@ -80,7 +80,7 @@ const [nameCountry, setNameCountry] = useState("")
   useEffect(() => {
     if (country.length > 0) {
       const countryName = country[0].name?.common;
-      const imageSource = `../src/assets/country-headers/${countryName}.png`;
+      const imageSource = `/public/country-headers/${countryName}.png`;
       setCountryImage(imageSource);
     }
   }, [country]);
