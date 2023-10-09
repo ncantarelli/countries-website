@@ -123,12 +123,12 @@ const [nameCountry, setNameCountry] = useState("")
   return (
 
     <div className='DetailsBody'>
-      <img src='/src/assets/arrow-left.svg' className='GoBackArrow' onClick={goBack} />
+      <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845368/travelImages/nmby0lp9wlumtyasabvl.svg' className='GoBackArrow' onClick={goBack} />
       <div 
       className="FavoritesIcon" 
       onClick={toggleFavorite}
       style={{backgroundColor: buttonBackgroundColor}}>
-        <img src='/src/assets/favorite-icon.svg' />
+        <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845366/travelImages/nxxxcchrkt9msbbvcn9t.svg' />
       </div>
       <img className="HeaderImage" src={countryImage} alt={country[0].name?.common} />
       <div className='DetailsHeader'>
@@ -152,11 +152,11 @@ const [nameCountry, setNameCountry] = useState("")
         return (
           <div className='CountrySpecifications' key={country.name?.common}>
             <div>
-              <img src='/src/assets/capital-icon.svg' alt="a small building representing the capital" />
+              <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845364/travelImages/di6im5kcvc62hrpqzd6t.svg' alt="a small building representing the capital" />
               <p>Capital: <span>{country.capital.join(", ")}</span></p>
             </div>
             <div>
-              <img src='/src/assets/languages-icon.svg' alt="a japanese character and a letter representing the language" />
+              <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845367/travelImages/ytngxpkxmxtfztkdpa0v.svg' alt="a japanese character and a letter representing the language" />
               
               <p>Languages:{country.languages && Object.values(country.languages).map((lang) => {
                 return <span key={lang}>{" " + lang}</span>
@@ -164,7 +164,7 @@ const [nameCountry, setNameCountry] = useState("")
               
             </div>
             <div>
-              <img src='/src/assets/currency-icon.svg' alt="a pair of coins representing the currency" />
+              <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845364/travelImages/fl9xsgmeozge03i8mjis.svg' alt="a pair of coins representing the currency" />
               <p>Currency:{country.currencies && Object.values(country.currencies).map((currency) => {
                 return <span key={currency.name}>{" " + currency.name}</span>
               })}</p>
@@ -183,12 +183,12 @@ const [nameCountry, setNameCountry] = useState("")
       <div className='ReviewsHolder'>
         {allowAccess ? (<Link to="" className='LoginLink' onClick={openReviewsModal}>
           <div>
-            <img src='/src/assets/write-button.svg' />
+            <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845369/travelImages/yfqxrouvmi1xuc2ksbum.svg' />
             <p>Share Your Experience</p>
           </div>
         </Link>) : (<Link to="/login" className='LoginLink'>
           <div>
-            <img src='/src/assets/log-in-icon.svg' />
+            <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845367/travelImages/mmdg9cusulz6vptivbe8.svg' />
             <p>Log In to Share Your Experience</p>
           </div>
         </Link>)

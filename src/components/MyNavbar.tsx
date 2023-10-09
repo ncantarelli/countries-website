@@ -22,7 +22,7 @@ function MyNavbar() {
         <nav>
             <div className="NavContainer">
                 <img
-                    src="/src/assets/burger-menu.svg"
+                    src="https://res.cloudinary.com/dykwqjdq3/image/upload/v1696844593/travelImages/aien3f2o5bdcpurrmfmd.svg"
                     alt="Navigation Menu"
                     onClick={toggleModal}
                     className='BurgerIcon'
@@ -30,7 +30,7 @@ function MyNavbar() {
                 <div className='LogoContainer'>
                     <NavLink to="/">
                         <img
-                            src="/images/logo2.svg"
+                            src="https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845368/travelImages/ve2izsfhcwplkriuqcj7.svg"
                             alt='Travel Logo'
                             className='TravelLogo'
                         />

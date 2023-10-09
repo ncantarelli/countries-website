@@ -106,7 +106,7 @@ function Countries() {
                 <div className='HeaderContainer'>
                     <h1>All Countries</h1>
                     <img
-                        src='/src/assets/filter-icon.svg'
+                        src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845366/travelImages/r91zjjarno2bntk3rwjt.svg'
                         height={"47px"}
                         width={"47px"}
                         onClick={toggleFilterBox}
@@ -128,7 +128,7 @@ function Countries() {
                                 <h4>{country.name?.common} {country.flag}</h4>
                                 <div className='CountryTags'>
                                     <p>{country.region}</p>
-                                    <p>Reviews<img src='/src/assets/review-icon.svg' /></p>
+                                    <p>Reviews<img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845370/travelImages/oduf17rxsh215m15b5ms.svg' /></p>
                                 </div>
                             </div>
                         </Link>
@@ -136,7 +136,7 @@ function Countries() {
                 })}
             </div>
             <div className="scroll-to-top" onClick={scrollToTop}>
-                <img src='/src/assets/purple-arrow-up.svg' />
+                <img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845364/travelImages/sihbed3cwqvbre1uxnli.svg' />
             </div>
         </>
     );

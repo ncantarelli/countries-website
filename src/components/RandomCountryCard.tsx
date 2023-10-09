@@ -47,7 +47,7 @@ function RandomItemFetcher() {
             <div>
               <p>{randomItem.region}</p>
               {/* <div> */}
-              <p>Reviews<img src='/src/assets/review-icon.svg' /></p>
+              <p>Reviews<img src='https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845370/travelImages/oduf17rxsh215m15b5ms.svg' /></p>
               {/* <img src='../src/assets/review-icon.svg' /> */}
               {/* </div> */}
             </div>

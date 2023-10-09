@@ -37,7 +37,7 @@ function Login() {
     return (
         <div className="RegistrationBox">
             <img
-                src="/src/assets/purple-arrow-left.svg"
+                src="https://res.cloudinary.com/dykwqjdq3/image/upload/v1696845368/travelImages/nmby0lp9wlumtyasabvl.svg"
                 className="RegistrationGoBackArrow"
                 onClick={goBack}
             />

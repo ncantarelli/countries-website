@@ -567,6 +567,12 @@ input::placeholder {
         /* justify-content: space-evenly; */
     }
     
+    .TravelLogo {
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: ; */
+    }
+
     .WhiteTravelLogo {
         display: none;
     }
