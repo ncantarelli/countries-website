@@ -30,7 +30,7 @@ function MyNavbar() {
                 <div className='LogoContainer'>
                     <NavLink to="/">
                         <img
-                            src="/src/assets/logo.svg"
+                            src="/images/logo2.svg"
                             alt='Travel Logo'
                             className='TravelLogo'
                         />
